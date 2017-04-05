@@ -7,8 +7,8 @@ var Script = function () {
             "oLanguage": {
                 "sLengthMenu": "_MENU_ records per page",
                 "oPaginate": {
-                    "sPrevious": "Prev",
-                    "sNext": "Next"
+                    "sPrevious": "上一页",
+                    "sNext": "下一页"
                 }
             },
             "aoColumnDefs": [{
