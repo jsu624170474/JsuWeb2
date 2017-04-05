@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jsu.dao.SysUserMenuDao" >
+  <resultMap id="BaseResultMap" type="com.jsu.entity.SysUserMenuDO" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <id column="menu_id" property="menuId" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="BaseResultMenuMap" type="com.jsu.entity.SysMenuInfoDO" >
+    <id column="menu_id" property="menuId" jdbcType="VARCHAR" />
+    <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
+    <result column="menu_order" property="menuOrder" jdbcType="VARCHAR" />
+    <result column="link_url" property="linkUrl" jdbcType="VARCHAR" />
+    <result column="disp_image" property="dispImage" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, menu_id, create_user, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.jsu.entity.SysUserMenuDO" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user_menu
+    where user_id = #{userId,jdbcType=INTEGER}
+      and menu_id = #{menuId,jdbcType=VARCHAR}
+  </select>
+  <select id="listMenuByUserid" resultMap="BaseResultMenuMap" parameterType="java.lang.Integer" >
+    SELECT smi.* FROM sys_menu_info smi 
+	  WHERE smi.status='1' AND 
+	  smi.menu_id IN (SELECT sumr.menu_id FROM sys_user_menu sumr WHERE sumr.user_id=#{userId,jdbcType=INTEGER})
+  	order by smi.menu_order asc
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.jsu.entity.SysUserMenuDO" >
+    delete from sys_user_menu
+    where user_id = #{userId,jdbcType=INTEGER}
+      and menu_id = #{menuId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jsu.entity.SysUserMenuDO" >
+    insert into sys_user_menu (user_id, menu_id, create_user, 
+      create_time)
+    values (#{userId,jdbcType=INTEGER}, #{menuId,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+</mapper>
