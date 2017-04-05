@@ -14,6 +14,20 @@
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
+                      	<form class="form-inline" role="form" style="margin-bottom: 10px;" >
+                             <div class="form-group">
+                                 <div class="col-sm-10">
+                                     <input type="text" class="form-control">
+                                 </div>
+                             </div>
+                             <div class="form-group">
+                                 <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                             </div>
+                             <button type="submit" class="btn btn-success">Sign in</button>
+                         </form>
+                      
+                      	<form name="userform" action="/backStage/sys/user/list" method="get">
                           <table class="table table-striped border-top" id="sample_1">
                           <thead>
                           <tr>
@@ -34,20 +48,24 @@
 	                              <td class="hidden-phone">${user.phone }</td>
 	                              <td class="hidden-phone">${user.email }</td>
 	                              <td class="hidden-phone">${user.status }</td>
-	                              <td class="hidden-phone"><span class="label label-success">Approved</span></td>
+	                              <td>
+                                      <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
+                                      <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+	                              </td>
 	                          </tr>
 	                        </c:forEach>
                           </tbody>
                           </table>
+                          <!-- 分页标签开始  -->
+				            <div class="">
+				                <paginator:page name="paginator" form="userform" action="/backStage/sys/user/list" />
+				            </div>
+				          <!-- 分页标签结束 -->
+                        </form>
                       </section>
                   </div>
               </div>
               <!-- page end-->
-              <!-- 分页标签开始  -->
-	            <div class="">
-	                <paginator:page name="paginator" form="orgform" action="/black/nation/list" />
-	            </div>
-	          <!-- 分页标签结束 -->
           </section>
       </section>
       <!--main content end-->
