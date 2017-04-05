@@ -19,4 +19,6 @@
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/static/backStage/css/style.css" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/static/backStage/css/style-responsive.css" rel="stylesheet" />
+    
+    <link href="<%=request.getContextPath()%>/static/backStage/css/page.css" rel="stylesheet" />
 

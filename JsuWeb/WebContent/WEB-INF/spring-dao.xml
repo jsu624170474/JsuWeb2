@@ -13,6 +13,7 @@
       
     <!--数据库连接-->  
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">   
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="${jdbc.url}" />  
         <property name="username" value="${jdbc.username}"/>  
         <property name="password" value="${jdbc.password}"/>  
@@ -38,9 +39,16 @@
          -->  
     </bean>  
       
+    <bean id="paginationInterceptor" class="com.jsu.commons.mybatisextend.PaginationInterceptor"/>  
+	
+      
     <!-- mybatis配置 -->  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
         <property name="dataSource" ref="dataSource" />
         <property name="mapperLocations" value="classpath:config/mapper/*.xml"></property> 
-    </bean>   
+    		<property name="plugins">
+	        <array><ref bean="paginationInterceptor"/></array>
+	    </property>
+    </bean>  
+    
 </beans>     

@@ -43,7 +43,6 @@
                   </div>
               </div>
               <!-- page end-->
-              
               <!-- 分页标签开始  -->
 	            <div class="">
 	                <paginator:page name="paginator" form="orgform" action="/black/nation/list" />
