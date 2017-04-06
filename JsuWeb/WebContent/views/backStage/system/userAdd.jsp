@@ -6,12 +6,21 @@
   </head>
   <body>
 	<%@include file="/views/backStage/commons/commonBegin.jsp"%>
+	
   <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
               <!-- page start-->
               <div class="row">
                   <div class="col-lg-12">
+                  
+                  <div id="alertDiv" class="alert alert-warning">
+						<a href="#" class="close" data-dismiss="alert">
+							&times;
+						</a>
+						<strong>警告！</strong>您的网络连接有问题。
+					</div>
+				                  
                       <section class="panel">
 						<header class="panel-heading" >
                               	<strong>新增用户</strong>
@@ -22,7 +31,7 @@
                                   <div class="form-group">
                                       <label class="col-lg-2 control-label">登录账号</label>
                                       <div class="col-lg-10">
-                                          <input name="loginName" type="text" class="form-control" style="width: 200px;" required>
+                                          <input id="loginName" name="loginName" type="text" class="form-control" style="width: 200px;" required>
                                           <div class="help-block" >* 不能包含特殊字符</div>
                                       </div>
                                   </div>
@@ -69,12 +78,37 @@
 	    	$("#btnBack").click( function () {
 	    		window.location.href='<%=basePath%>backStage/sys/user/list';
 	    	});
+	    	
+	    	$("#alertDiv").hide();
 	    });
 		
 		function check(){
-			// 校验此登录账号是否存在
 			
-			return true;
+			var checkResult = true;
+			
+			// 校验此登录账号是否存在
+        	$.ajax({
+                type:"post",
+                data:{
+                	"loginName" : $("#loginName").val()
+                },
+                async: false,
+                url:"<%=basePath%>backStage/sys/user/addCheck",
+                success:function(data) {
+                	if(data.rtnCode!='S'){
+                		$("#alertDiv").hide();
+                		checkResult = false;
+                	}
+                },
+                error:function(){
+                    alert("异常，请联系管理员！");
+                    checkResult = false;
+                }
+            });
+			
+			
+			alert("22");
+			return checkResult;
 		}
 	</script>
 	</body>

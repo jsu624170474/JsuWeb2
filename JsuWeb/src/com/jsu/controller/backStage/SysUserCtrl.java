@@ -8,10 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jsu.commons.constants.Constants;
 import com.jsu.commons.constants.ConstantsConfig;
 import com.jsu.commons.mybatisextend.PageContext;
@@ -89,4 +92,22 @@ public class SysUserCtrl {
 		return mav;
 	}
 	
+	
+	/**
+	 * 校验是否符合新增用户条件
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "addCheck")
+    @ResponseBody
+	public JSONObject addCheck(Model model, HttpServletRequest request){
+		JSONObject rtnJson = new JSONObject(); 
+		
+		String loginName = request.getParameter("loginName");
+		
+		rtnJson.put("rtnCode", "F");
+		rtnJson.put("rtnMsg", "该账号已存在！");
+		
+		return rtnJson;
+	}
 }
