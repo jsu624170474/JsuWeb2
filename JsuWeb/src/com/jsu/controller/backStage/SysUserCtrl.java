@@ -20,6 +20,7 @@ import com.jsu.commons.constants.ConstantsConfig;
 import com.jsu.commons.mybatisextend.PageContext;
 import com.jsu.commons.utils.ConfigUtil;
 import com.jsu.commons.utils.DateUtil;
+import com.jsu.commons.utils.ListUtil;
 import com.jsu.commons.utils.PasswdEncryption;
 import com.jsu.commons.utils.StringUtil;
 import com.jsu.dao.SysUserInfoDao;
@@ -105,9 +106,16 @@ public class SysUserCtrl {
 		
 		String loginName = request.getParameter("loginName");
 		
-		rtnJson.put("rtnCode", "F");
-		rtnJson.put("rtnMsg", "该账号已存在！");
+		SysUserInfoDO sysUserInfoDO = new SysUserInfoDO();
+		sysUserInfoDO.setLoginName(loginName);
+		List<SysUserInfoDO> list = userInfoDao.selectSelective(sysUserInfoDO);
+		if(!ListUtil.isBlank(list)){
+			rtnJson.put("rtnCode", "F");
+			rtnJson.put("rtnMsg", "该账号已存在！");
+			return rtnJson;
+		}
 		
+		rtnJson.put("rtnCode", "S");
 		return rtnJson;
 	}
 }
