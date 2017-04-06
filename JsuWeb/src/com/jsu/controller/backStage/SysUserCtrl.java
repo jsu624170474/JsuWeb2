@@ -85,7 +85,7 @@ public class SysUserCtrl {
 		userInfoDao.insert(userInfoDo);
 		
 		/** 返回列表页面 */
-		ModelAndView mav = new ModelAndView("backStage/system/userList");
+		ModelAndView mav = new ModelAndView("redirect:/backStage/sys/user/list");
 		return mav;
 	}
 	
