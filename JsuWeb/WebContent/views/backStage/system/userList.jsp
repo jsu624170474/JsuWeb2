@@ -54,7 +54,7 @@
 	                              <td>${user.status }</td>
 	                              <td>
                                       <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
-                                      <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+                                      <!-- <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button> -->
 	                              </td>
 	                          </tr>
 	                        </c:forEach>
