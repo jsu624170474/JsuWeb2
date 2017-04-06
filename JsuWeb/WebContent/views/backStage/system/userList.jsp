@@ -4,7 +4,6 @@
   <head>
     <%@include file="/views/backStage/commons/commonHeader.jsp"%>
   </head>
-
   <body>
 	<%@include file="/views/backStage/commons/commonBegin.jsp"%>
   <!--main content start-->
@@ -14,40 +13,45 @@
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
-                      	<form class="form-inline" role="form" style="margin-bottom: 10px;" >
-                             <div class="form-group">
-                                 <div class="col-sm-10">
-                                     <input type="text" class="form-control">
+                      	<form class="form-inline" role="form" style="margin-bottom: 10px;" 
+                      		action="<%=path %>/backStage/sys/user/list" method="get">
+                             <div class="form-group" style="margin: 10px;">
+                                 <input name="loginName" value="${loginName}" type="text" class="form-control" placeholder="登录账号">
+                             </div>
+                             <div class="form-group" style="margin: 10px;">
+                                 <input name="name" value="${name}" type="text" class="form-control" placeholder="用户名">
+                             </div>
+                             <div class="form-group" style="margin: 10px;">
+                             	<button type="submit" class="btn btn-success"> 查 询 </button>
+                        	 </div>
+                        	 <div class="form-group" style="float: right;margin: 10px;">
+                                 <div class="col-lg-offset-2 col-lg-10">
+                                     <button id="btnUserAdd" type="button" class="btn btn-danger">新增用户</button>
                                  </div>
                              </div>
-                             <div class="form-group">
-                                 <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                             </div>
-                             <button type="submit" class="btn btn-success">Sign in</button>
                          </form>
                       
-                      	<form name="userform" action="/backStage/sys/user/list" method="get">
+                      	<form name="userform" action="<%=path %>/backStage/sys/user/list" method="get">
                           <table class="table table-striped border-top" id="sample_1">
                           <thead>
-                          <tr>
+                          <tr style="background-color: #ecd59e;">
+                              <th>登录账号</th>
                               <th>用户名</th>
-                              <th class="hidden-phone">登录账号</th>
-                              <th class="hidden-phone">电话</th>
-                              <th class="hidden-phone">邮箱</th>
-                              <th class="hidden-phone">状态</th>
-                              <th class="hidden-phone">操作</th>
+                              <th>电话</th>
+                              <th>邮箱</th>
+                              <th>状态</th>
+                              <th>操作</th>
                           </tr>
                           </thead>
                           <tbody>
                           	<!--表格头部结束-->
 							<c:forEach items="${list }" var="user" varStatus="s">
 	                          <tr class="odd gradeX">
+	                              <td>${user.loginName }</td>
 	                              <td>${user.name }</td>
-	                              <td class="hidden-phone">${user.loginName }</td>
-	                              <td class="hidden-phone">${user.phone }</td>
-	                              <td class="hidden-phone">${user.email }</td>
-	                              <td class="hidden-phone">${user.status }</td>
+	                              <td>${user.phone }</td>
+	                              <td>${user.email }</td>
+	                              <td>${user.status }</td>
 	                              <td>
                                       <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
                                       <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
@@ -74,5 +78,13 @@
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
     <script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/DT_bootstrap.js"></script>
     <%-- <script src="<%=path %>/static/backStage/js/dynamic-table.js"></script> --%>
+	
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	    	$("#btnUserAdd").click( function () {
+	    		window.location.href='<%=basePath%>backStage/sys/user/add';
+	    	});
+	    });
+    </script>
 	</body>
 </html>

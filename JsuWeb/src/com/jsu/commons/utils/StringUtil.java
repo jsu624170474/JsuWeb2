@@ -158,6 +158,10 @@ public class StringUtil {
 	 */
 	public static String toUtf8String(String s) {
 
+		if(isBlank(s)){
+			return "";
+		}
+		
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
@@ -302,7 +306,7 @@ public class StringUtil {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(formatDouble(10.432));
+		System.out.println(getRandomString(15));
 	}
 	
 	/**
@@ -466,11 +470,45 @@ public class StringUtil {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 		int random  = (int)(new Random().nextDouble()*1000);
 		String ranStr = String.valueOf(System.currentTimeMillis());
-		//System.out.println(ranStr);
 		ranStr = ranStr.substring(ranStr.length()-3);
-		//System.out.println(ranStr);
 		String yyyyMMddHH24mmss =formatter.format(new Date());
 		return yyyyMMddHH24mmss+ranStr+String.format("%03d", random) ;
 	}
 	
+	/**
+	 * request请求乱码处理
+	 * @param param
+	 * @return
+	 */
+	public static String reqParamTrade(String param){
+		
+		if(isBlank(param)){
+			return "";
+		}
+		
+		String tmp = "";
+		try {
+			tmp = new String(param.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		return tmp;
+	}
+	
+	/**
+	 * 生成随机码
+	 * @param length
+	 * @return
+	 */
+	public static String getRandomString(int length) { //length表示生成字符串的长度
+	    String base = "ABC01abcDEF3defGHIJKh8qrst56iLMNxOoPQ7RSTp4UVWXyYZgjklmnuvwz29";   
+	    Random random = new Random();
+	    StringBuffer sb = new StringBuffer();   
+	    for (int i = 0; i < length; i++) {   
+	        int number = random.nextInt(base.length());   
+	        sb.append(base.charAt(number));   
+	    }   
+	    return sb.toString();   
+	 }  
 }

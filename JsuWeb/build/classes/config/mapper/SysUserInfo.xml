@@ -32,6 +32,9 @@
     	<if test="userId != null and userId != ''">
 			and user_id = #{userId}
 		</if>
+		<if test="name != null and name != ''">
+			and name = #{name}
+		</if>
 		<if test="loginName != null and loginName != ''">
 			and login_name = #{loginName}
 		</if>
@@ -47,11 +50,11 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.jsu.entity.SysUserInfoDO" >
-    insert into sys_user_info (user_id, login_name, name, 
+    insert into sys_user_info (login_name, name, 
       password, salt, phone, 
       email, status, create_time, 
       update_time, login_time)
-    values (#{userId,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+    values (#{loginName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{loginTime,jdbcType=TIMESTAMP})

@@ -83,7 +83,7 @@ public class PasswdEncryption {
 	 *            盐
 	 * @return 加密后的字符串
 	 */
-	synchronized private static String toPasswd(String inputPasswd, byte[] salt) {
+	synchronized public static String toPasswd(String inputPasswd, byte[] salt) {
 		String pwd = "";
 
 		try {

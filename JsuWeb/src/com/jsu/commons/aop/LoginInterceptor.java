@@ -118,8 +118,6 @@ public class LoginInterceptor implements HandlerInterceptor{
 		
 		/** 重置选择菜单 */
 		if(!StringUtil.isBlank(requestURI)){
-			session.setAttribute(Constants.CUR_USER_MENU_SEL_1, "");
-			session.setAttribute(Constants.CUR_USER_MENU_SEL_2, "");
 			checkMenuActive(currentUserMenu, requestURI);
 		}
 	}
@@ -167,7 +165,10 @@ public class LoginInterceptor implements HandlerInterceptor{
 	 * @param menuInfo
 	 */
 	private void setMenuSel(SysMenuInfoDO menuInfo){
+		
 		HttpSession session = SessionUtil.getSession();
+		session.setAttribute(Constants.CUR_USER_MENU_SEL_1, "");
+		session.setAttribute(Constants.CUR_USER_MENU_SEL_2, "");
 		
 		if(menuInfo.getMenuOrder().length()==3){ // 一级
 			session.setAttribute(Constants.CUR_USER_MENU_SEL_1, menuInfo.getMenuId());
