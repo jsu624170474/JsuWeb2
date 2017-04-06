@@ -24,6 +24,11 @@
                              <div class="form-group" style="margin: 10px;">
                              	<button type="submit" class="btn btn-success"> 查 询 </button>
                         	 </div>
+                        	 <div class="form-group" style="float: right;margin: 10px;">
+                                 <div class="col-lg-offset-2 col-lg-10">
+                                     <button id="btnUserAdd" type="button" class="btn btn-danger">新增用户</button>
+                                 </div>
+                             </div>
                          </form>
                       
                       	<form name="userform" action="<%=path %>/backStage/sys/user/list" method="get">
@@ -73,5 +78,13 @@
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
     <script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/DT_bootstrap.js"></script>
     <%-- <script src="<%=path %>/static/backStage/js/dynamic-table.js"></script> --%>
+	
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	    	$("#btnUserAdd").click( function () {
+	    		window.location.href='<%=basePath%>backStage/sys/user/add';
+	    	});
+	    });
+    </script>
 	</body>
 </html>
