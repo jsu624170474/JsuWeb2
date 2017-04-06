@@ -158,6 +158,10 @@ public class StringUtil {
 	 */
 	public static String toUtf8String(String s) {
 
+		if(isBlank(s)){
+			return "";
+		}
+		
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
@@ -466,11 +470,29 @@ public class StringUtil {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 		int random  = (int)(new Random().nextDouble()*1000);
 		String ranStr = String.valueOf(System.currentTimeMillis());
-		//System.out.println(ranStr);
 		ranStr = ranStr.substring(ranStr.length()-3);
-		//System.out.println(ranStr);
 		String yyyyMMddHH24mmss =formatter.format(new Date());
 		return yyyyMMddHH24mmss+ranStr+String.format("%03d", random) ;
 	}
 	
+	/**
+	 * request请求乱码处理
+	 * @param param
+	 * @return
+	 */
+	public static String reqParamTrade(String param){
+		
+		if(isBlank(param)){
+			return "";
+		}
+		
+		String tmp = "";
+		try {
+			tmp = new String(param.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		return tmp;
+	}
 }
