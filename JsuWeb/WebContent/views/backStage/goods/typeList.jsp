@@ -75,20 +75,20 @@
 				            	<div class="form-group" >
                                       <label class="col-lg-2 control-label">名称</label>
                                       <div class="col-lg-10">
-                                          <input name="phone" type="text" class="form-control" style="width: 200px;">
+                                          <input id="name" name="name" type="text" class="form-control" style="width: 200px;">
                                       </div>
                                   </div>
                                   <br/>
                                   <div class="form-group" >
                                       <label class="col-lg-2 control-label">说明</label>
                                       <div class="col-lg-10">
-                                          <input name="phone" type="text" class="form-control" style="width: 200px;">
+                                          <input id="remark" name="remark" type="text" class="form-control" style="width: 200px;">
                                       </div>
                                   </div>
 				            </div>
 				            <div class="modal-footer">
 				                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				                <button type="button" class="btn btn-primary">保存产品类型</button>
+				                <button type="button" class="btn btn-primary" id="saveGoodsType">保存产品类型</button>
 				            </div>
 				        </div>
 				    </div>
@@ -100,5 +100,27 @@
 	<%@include file="/views/backStage/commons/commonEnd.jsp"%>
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
     <script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/DT_bootstrap.js"></script>
+	<script type="text/javascript">
+		$("#saveGoodsType").click( function () {
+			$.ajax({
+	            type:"post",
+	            data:{
+	            	"name" : $("#name").val(),
+	            	"remark" : $("#remark").val()
+	            },
+	            async: false,
+	            url:"<%=path %>/backStage/goods/type/save",
+	            success:function(data) {
+	                	if(data.rtnCode!='S'){
+	                		window.location.href='<%=path %>/backStage/goods/type/list';
+	                	}
+	            },
+	            error:function(){
+	                alert("异常，请联系管理员！");
+	            }
+	        });
+		});
+	</script>
+	
 	</body>
 </html>
