@@ -1,5 +1,7 @@
 package com.jsu.entity;
 
+import java.util.Date;
+
 public class LeaveMessageDO {
     private Integer id;
 
@@ -10,6 +12,8 @@ public class LeaveMessageDO {
     private String email;
 
     private String message;
+    
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -50,4 +54,12 @@ public class LeaveMessageDO {
     public void setMessage(String message) {
         this.message = message == null ? null : message.trim();
     }
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 }

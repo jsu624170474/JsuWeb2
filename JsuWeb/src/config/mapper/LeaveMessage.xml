@@ -7,11 +7,25 @@
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
   </resultMap>
   <insert id="insert" parameterType="com.jsu.entity.LeaveMessageDO" >
     insert into leave_message (id, name, phone, 
-      email, message)
+      email, message, create_time)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR})
+      #{email,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
+  
+  <select id="list" resultMap="BaseResultMap" parameterType="com.jsu.entity.LeaveMessageDO">
+  	select * from leave_message
+  	<where>
+  		<if test="name != null and name != ''">
+  			and name = #{name}
+  		</if>
+  		<if test="phone != null and phone != '' ">
+  			and phone = #{phone}
+  		</if>
+  	</where>
+  	order by create_time desc 
+  </select>
 </mapper>

@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jsu.commons.utils.DateUtil;
 import com.jsu.commons.utils.StringUtil;
 import com.jsu.dao.LeaveMessageDao;
 import com.jsu.entity.LeaveMessageDO;
@@ -37,6 +38,7 @@ public class ContactCont {
 		leaveMessage.setPhone(StringUtil.nullToString(request.getParameter("phone")));
 		leaveMessage.setName(StringUtil.nullToString(request.getParameter("name")));
 		leaveMessage.setMessage(StringUtil.nullToString(request.getParameter("message")));
+		leaveMessage.setCreateTime(DateUtil.getNowDate());
 		leaveMessageDao.insert(leaveMessage);
 		
 		model.addAttribute("alertMsg", "display");
