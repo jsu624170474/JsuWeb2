@@ -26,7 +26,7 @@ import com.jsu.entity.SysUserInfoDO;
  */
 @Aspect
 @Component("LoginInterceptor")
-public class LoginInterceptor implements HandlerInterceptor{
+public class PathInterceptor implements HandlerInterceptor{
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
