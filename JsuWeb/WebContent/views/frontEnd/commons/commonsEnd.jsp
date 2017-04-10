@@ -9,44 +9,38 @@
 				<div class="widget">
 					<h5 class="widgetheading">联系方式</h5>
 					<address>
-					<strong>Dine-in company Inc</strong><br>
-					JC Main Road, Near Silnile tower<br>
-					 Pin-21542 NewYork US.</address>
+					<strong></strong><br>
+					湖北省武汉市洪山区团结大道</address>
 					<p>
-						<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-						<i class="icon-envelope-alt"></i> email@domainname.com
+						<i class="icon-phone"></i> 18810000000 <br>
 					</p>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Quick Links</h5>
-					<ul class="link-list">
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Latest Events</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Terms and conditions</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Privacy policy</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Career</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Contact us</a></li>
-					</ul>
+					<h5 class="widgetheading"><a href="https://weidian.com/?userid=334028636" target="blank">我的微店</a>	</h5>
+					<div>
+						<img alt="扫描二维码进入微店" style="width: 150px;height: 150px;"
+							src="<%=request.getContextPath()%>/static/frontEnd/image/myinfo/weidian2.jpg">
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="link-list">
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
+					<h5 class="widgetheading">微信</h5>
+					<div>
+						<img style="width: 150px;height: 150px;"
+							src="<%=request.getContextPath()%>/static/frontEnd/image/myinfo/weixin.jpg">
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Recent News</h5>
+					<h5 class="widgetheading">友情链接</h5>
 					<ul class="link-list">
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="http://www.html5code.net/demo/616/index.html#">Natus error sit voluptatem accusantium doloremque</a></li>
+						<li><!-- <a href="http://www.html5code.net/demo/616/index.html#"> -->美味人生</li>
+						<li><a >水果店</a></li>
+						<li><a >干果店</a></li>
 					</ul>
 				</div>
 			</div>

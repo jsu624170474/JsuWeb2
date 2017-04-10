@@ -36,7 +36,7 @@
         <mvc:interceptor>    
             <mvc:mapping path="/backStage/**" />
             <mvc:exclude-mapping path="/backStage/login/*" />
-            <bean class="com.jsu.commons.aop.LoginInterceptor"></bean>    
+            <bean class="com.jsu.commons.aop.PathInterceptor"></bean>    
         </mvc:interceptor>  
     </mvc:interceptors>  
         

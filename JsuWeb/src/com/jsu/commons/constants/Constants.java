@@ -21,4 +21,11 @@ public class Constants {
 	/** 状态 */
 	public static String STATUS_YES="1"; // 正常
 	public static String STATUS_NO="0"; // 异常
+
+	/** 成功、失败状态 */
+	public static String STATUS_SUCC="S";
+	public static String STATUS_FAIL="F";
+	
+	/** 配置 - 上传文件路径 */
+	public static final String FILE_UPLOAD_PATH = "file_upload_path";
 }

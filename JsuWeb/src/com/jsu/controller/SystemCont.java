@@ -42,11 +42,6 @@ public class SystemCont {
 		return "frontEnd/aboutus";
 	}
 	
-	@RequestMapping(value="/contactus", method=RequestMethod.GET)
-	public String contactus(){
-		
-		return "frontEnd/contactus";
-	}
 	
 	@RequestMapping(value="/single", method=RequestMethod.GET)
 	public String single(){

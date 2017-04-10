@@ -245,7 +245,7 @@ public class StringUtil {
 	 * @param paramMap	参数的Map
 	 * @return	字符串参数形式的Map
 	 */
-	public static String formatParamMapToStr(Map<String,String> paramMap){
+	public static String formatParamMapToStr(Map<String,Object> paramMap){
 		StringBuilder paramSb =  new StringBuilder();
 		for (String key : paramMap.keySet()) {
 			paramSb.append(key+"="+paramMap.get(key)+"&");
