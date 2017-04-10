@@ -22,9 +22,9 @@
                                  <input name="name" value="${name}" type="text" class="form-control" placeholder="用户名">
                              </div>
                              <div class="form-group" style="margin: 10px;">
-                             	<button type="submit" class="btn btn-success"> 查 询 </button>
+                             	<button type="submit" class="btn btn-primary"> 查 询 </button>
                         	 </div>
-                        	 <div class="form-group" style="float: right;margin: 10px;">
+                        	 <div class="form-group" style="float: right;margin: 10px;margin-right: 50px;">
                                  <div class="col-lg-offset-2 col-lg-10">
                                      <button id="btnUserAdd" type="button" class="btn btn-danger">新增用户</button>
                                  </div>

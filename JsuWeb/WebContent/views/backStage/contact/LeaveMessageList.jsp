@@ -67,14 +67,5 @@
 	<%@include file="/views/backStage/commons/commonEnd.jsp"%>
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
     <script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/DT_bootstrap.js"></script>
-    <%-- <script src="<%=path %>/static/backStage/js/dynamic-table.js"></script> --%>
-	
-	<script type="text/javascript">
-	    $(document).ready(function(){
-	    	$("#btnUserAdd").click( function () {
-	    		window.location.href='<%=basePath%>backStage/sys/user/add';
-	    	});
-	    });
-    </script>
 	</body>
 </html>
