@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yqjr.dao.CfgGoodsDao" >
+  <resultMap id="BaseResultMap" type="com.yqjr.entity.CfgGoodsDO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="goods_type_id" property="goodsTypeId" jdbcType="INTEGER" />
+    <result column="flag" property="flag" jdbcType="CHAR" />
+    <result column="period_amt" property="periodAmt" jdbcType="DOUBLE" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="is_Recommend" property="isRecommend" jdbcType="CHAR" />
+    <result column="sales_amt" property="salesAmt" jdbcType="DOUBLE" />
+    <result column="sales_date_begin" property="salesDateBegin" jdbcType="VARCHAR" />
+    <result column="sales_date_end" property="salesDateEnd" jdbcType="VARCHAR" />
+    <result column="sales_limit_num" property="salesLimitNum" jdbcType="VARCHAR" />
+    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="order_seq" property="orderSeq" jdbcType="VARCHAR" />
+    <result column="update_Time" property="updateTime" jdbcType="VARCHAR" />
+    <result column="update_User" property="updateUser" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, goods_type_id, flag, period_amt, stock, is_Recommend, sales_amt, sales_date_begin, sales_date_end, 
+    sales_limit_num, pic_url, remark, order_seq, update_Time, update_User
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cfg_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectList" resultType="java.util.Map" parameterType="java.util.Map">
+	  select cg.*,cgt.name as goodsTypeName 
+	  from cfg_goods cg,cfg_goods_type cgt
+	  <where>
+		cg.goods_type_id=cgt.id  
+		<if test="goodsName != null">
+			and cg.name like concat('%',#{goodsName},'%')
+		</if>
+		<if test="goodsTypeName != null">
+			and cgt.name like concat('%',#{goodsTypeName},'%')
+		</if>
+		<if test="flag != null">
+			and cg.flag in ('${flag}')
+		</if>
+	  </where> 
+	  order by update_Time desc 
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cfg_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert"  useGeneratedKeys="true" keyProperty="id" 
+  		parameterType="com.yqjr.entity.CfgGoodsDO" >
+    insert into cfg_goods (id, name, goods_type_id,flag, period_amt, stock, is_Recommend, 
+      sales_amt, sales_date_begin, sales_date_end, sales_limit_num, pic_url, remark, 
+      order_seq, update_Time, update_User)
+    values (#{id}, #{name,jdbcType=VARCHAR}, #{goodsTypeId},#{flag}, #{periodAmt}, #{stock}, #{isRecommend}, 
+      #{salesAmt}, #{salesDateBegin}, #{salesDateEnd},#{salesLimitNum}, #{picUrl}, #{remark}, 
+      #{orderSeq}, #{updateTime},#{updateUser})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yqjr.entity.CfgGoodsDO" >
+    update cfg_goods
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsTypeId != null" >
+        goods_type_id = #{goodsTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=CHAR},
+      </if>
+      <if test="periodAmt != null" >
+        period_amt = #{periodAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="stock != null" >
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="isRecommend != null" >
+        is_Recommend = #{isRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="salesAmt != null" >
+        sales_amt = #{salesAmt,jdbcType=DOUBLE},
+      </if>
+      <if test="salesDateBegin != null" >
+        sales_date_begin = #{salesDateBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="salesDateEnd != null" >
+        sales_date_end = #{salesDateEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="salesLimitNum != null" >
+        sales_limit_num = #{salesLimitNum,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null" >
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSeq != null" >
+        order_seq = #{orderSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_Time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        update_User = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yqjr.entity.CfgGoodsDO" >
+    update cfg_goods
+    set name = #{name,jdbcType=VARCHAR},
+      goods_type_id = #{goodsTypeId,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=CHAR},
+      period_amt = #{periodAmt,jdbcType=DOUBLE},
+      stock = #{stock,jdbcType=INTEGER},
+      is_Recommend = #{isRecommend,jdbcType=INTEGER},
+      sales_amt = #{salesAmt,jdbcType=DOUBLE},
+      sales_date_begin = #{salesDateBegin,jdbcType=VARCHAR},
+      sales_date_end = #{salesDateEnd,jdbcType=VARCHAR},
+      sales_limit_num = #{salesLimitNum,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      order_seq = #{orderSeq,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

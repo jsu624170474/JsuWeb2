@@ -1,0 +1,260 @@
+ 
+	.field input{
+		width:100px;
+		margin-right:5px;
+		display:inline-block;
+	}
+	.add-input-btn{
+		display:inline-block;
+		width:40px;
+		height:40px;
+		cursor:pointer;
+		margin-left:15px;
+		margin-top: 10px;
+		vertical-align:top;
+		color:#000 !important;
+		background:url(../../images/add-input.png) no-repeat;
+		
+	}
+	.rightTable{
+		width:500px;
+		left:0;
+		top:0%;
+	}
+	 #rightMain .table-btn{
+		width:100px;
+		position:relative;
+		left:50%;
+		top:10px;
+		margin-left:-85px;
+		display:none;
+	}
+
+	 .rightTable .table{
+	 
+		display:none;
+	 }
+	 .rightTable table td{
+	 	background:#fff;
+		text-align:center;
+		height:26px;
+		line-height:26px;
+		width:100px;
+		color:#000 !important;
+	 }
+	 .rightTable table thead td{
+	 	height:28px;
+		line-height:28px;
+	 	background:rgb(64,199,219);
+	 }
+	.rightTable table tbody input{
+		width:100%;
+		border:0;
+		outline:none;
+		text-align:center;
+	}
+	.input-wrap{
+		width:100px;
+		margin-left:5px;
+		margin-top:5px;
+		display:inline-block;
+		position:relative;
+	}
+	.input-wrap i{
+		display:block;
+		position:absolute;
+		right:-3px;
+		top:-8px;
+		cursor:pointer;	
+		opacity:0.6;
+	}
+	.input-wrap i img{
+		width:12px;
+		height:12px;
+	}
+.clearfix:after { 
+    visibility: hidden; 
+    display: block; 
+    font-size: 0; 
+    content: " "; 
+    clear: both; 
+    height: 0; 
+	} 
+	.clearfix{*zoom:1;}
+	.fl{
+		float:left;
+	}
+	/*上传图片样式  */
+	.img-load-main{
+		width:100%;
+		margin:10px 0 0 0;
+	}
+	.img-load-main strong{
+		display:block;
+		width:120px;
+	}
+	.img-load{
+		position:relative;
+	}
+	.img-load img{
+	z-index:51;
+	position:absolute;
+		
+		
+	}
+	.img-load span{
+		display:block;
+		position:absolute;
+	z-index:50;
+	width:90px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	color:#ccc;
+	bottom:0;
+	    left:0;
+	   
+	}
+	.img-load{
+	/* width:90px;
+	height:80px; */
+	}
+	.img-item1{
+		width:200px !important;
+		height:200px !important;
+	}
+	.img-load input{
+		position:absolute;
+		z-index:100;
+	font-size:140px;
+    width:90px;
+	height:80px;
+		overflow:hidden;
+	    top:0;
+	    left:0;
+	    opacity:0;
+	}
+	.img-item1 input{
+		 width:200px;
+		 height:200px;
+		 top:0;
+		 left:0;
+	}
+
+	.img-item1 img{
+		 width:200px;
+		 height:200px;
+	}
+	.tbody-main ,.thead-top{
+		/* background:#ccc; */
+		
+	}
+	.tbody-main{
+		padding-bottom:1px;
+	}
+	.tbody-main a,.thead-top a{
+	            display: inline-block;
+	            width: 100px;
+	            height: 26px;
+	            background: #fff;
+	            margin:1px 0 0 1px;
+	            text-align: center;
+	            line-height: 26px;
+	            cursor: pointer;
+	            float:left;
+	 }
+		 .tbody-main input{
+		 	width:100px;
+		 	height: 26px;
+		 	line-height: 26px;
+		 	text-align: center;
+		 	margin:1px 0 0 1px;
+		 	padding: 0;
+		 	outline:none;
+		 	border:none;
+		 	float:left;
+		 }
+	#upLoad3,#upLoad4{
+		width:90px;
+		height:80px;
+		border:1px solid #ccc;	
+		position:relative;
+	}
+	#upLoad3 input,#upLoad4 input{
+		position:absolute;
+		opacity:0;
+		top:0;
+		left:0;
+		border:0;
+		outline:none;
+	}
+	#upLoad3 img,#upLoad4 img{
+		width:88px;
+		height:78px;
+		top:0;
+		left:0;
+		position:absolute;
+		border:0;
+	}
+	.upLoad-img img{
+		/* width:250px;
+		height:250px; */
+	}
+	.upLoad-img {
+		position:absolute;
+		/* width:250px;
+		height:250px; */
+		top:0;
+		left:0;
+	}
+	#preview img{
+		width:50px;
+		height:50px;
+		border:1px solid #ccc;
+		margin: 5px 5px 0 0;
+	}
+	img.color{
+		border:1px solid red !important;
+	}
+	.upLoad_main{
+		position:relative;
+	}
+	#upLoad3 li,#upLoad4 li{
+		line-height:80px;
+	}
+	#defaultImg{
+		display:none;
+	}
+	.upLoad_main .field .input-help{
+		left:50%;
+		top:0;
+		margin-left:-50px;
+		position:absolute;
+		line-height:200px;
+		z-index:-1;
+	} 
+	#upload{
+		left:0;
+		top:0;
+		width:200px;
+		height:200px;
+		opacity:0;
+		z-index:300;
+		position:absolute;
+		
+	}
+	
+	#previewProInfoSelect input,#previewProInfoSelect label{
+	margin:5px;
+	}
+	
+	#previewProInfoSelect label,.previewProInfoSelectLabel{
+		width:85px !important;
+		display:inline-block;
+		text-align:left;
+	}
+	
+	.clear{
+		clear:both;
+	}
+ 

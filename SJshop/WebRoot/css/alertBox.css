@@ -1,0 +1,65 @@
+.alertBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.alertContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 330px;
+    height: 318px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.alert-title{
+    font-size: 16px;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0 30px;
+    line-height: 46px;
+    color: #666;
+}
+.form-list{
+    padding: 0 30px;
+}
+.form-list_item{
+    display: block;
+    margin: 18px auto;
+}
+.form-list_item span{
+    display: inline-block;
+    width: 65px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+.form-list_item input{
+    display: inline-block;
+    border: 1px solid #dfdfdf;
+    width: 180px;
+    height: 34px;
+    padding: 5px;
+}
+.ctrlBox{
+    text-align: center;
+    padding: 9px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #dfdfdf;
+}
+.ctrlBox>.btn{
+    display: inline-block;
+    margin: 0 10px;
+}
+#showDataForm{
+    overflow-y: scroll;
+    height: 271px;
+}

@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+.validFrom  .formItems .formItem{
+    margin-bottom: 20px;
+    color: #666;
+}
+.validFrom  .formItems .formItem label{
+    width:120px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+.validFrom .formItems .formItem input[type=text]{
+    width:200px;
+    height:34px;
+    border:1px solid #dfdfdf;
+    border-radius: 2px;
+    padding-left: 3px;
+    margin-right: 5px;
+}
+
+.validFrom .formFooter .btn{
+    text-align: center;
+    display: inline-block;
+    width:126px;
+    height:48px;
+    line-height:48px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background:#61bf65;
+    font-size: 20px;
+    margin-left: 180px;
+}
+.validFrom .formFooter .btn:active{
+    background:#71cd76;
+}
+
+.validFrom .formItems .formItem textarea{
+   border-radius: 4px;
+    vertical-align: middle;
+    width: 200px;
+}
+

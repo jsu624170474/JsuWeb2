@@ -1,0 +1,143 @@
+*{
+   box-sizing: border-box;
+}
+body{
+    font-family: "microsoft yahei";
+    background:url(../images/loginbg.png) no-repeat;
+    background-size: cover;
+}
+
+.loginform{
+    width:448px;
+    height:378px;
+    position: absolute;
+    top:43%;
+    left:49%;
+    margin-left: -177px;
+    margin-top: -189px;
+    border:1px solid #dadde9;
+    background: rgba(197,201,220,0.8);
+    box-shadow: 0 0 5px 3px #8990b5;
+}
+
+header{
+    height:80px;
+    padding: 30px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.formTip i {
+    color: #eb5625;
+}
+
+.loginform  .errormsg{
+    position: absolute;
+    top:80px;
+    left:44px;
+}
+
+.login_item{
+    width: 262px;
+    margin:35px auto;
+    border-bottom:1px solid #9796ad;
+}
+
+
+.login_item input{
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    border: 0;
+    margin: 0;
+    padding: 0 0 0 15px;
+    background-color: transparent;
+    color: #6c798d;
+}
+
+.login_item input:focus {
+    outline: none;
+}
+
+button{
+    width:150px;
+    height:60px;
+    background: #fa6a6a;
+    color: #fff;
+    border:none;
+    border-radius: 30px;
+    margin: 0 auto;
+    display: block;
+    outline-color: #c3bbd2;
+}
+.forget{
+    text-align: center;
+}
+.forget a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    min-width: 1400px;
+    margin: 0 auto;
+    height:66px;
+    background: rgba(200,194,204,0.8);
+    color:#5b6a7e;
+    line-height: 66px;
+    text-align: right;
+    padding-right:100px;
+}
+
+footer p a{
+    width: 80px;
+    height:25px;
+    padding: 6px 11px;
+    background: #6ac2fa;
+}
+
+
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #6c798d;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #6c798d;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #6c798d;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #6c798d;
+}
+
+@font-face {font-family: "iconfont";
+    src: url('../font/fonts/iconfont.eot'); /* IE9*/
+    src: url('../font/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/fonts/iconfont.woff') format('woff'), /* chrome??firefox */
+    url('../font/fonts/iconfont.ttf') format('truetype'), /* chrome??firefox??opera??Safari, Android, iOS 4.2+*/
+    url('../font/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:22px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #6c798d;
+}
+
+.icon-30user:before{content: "\e622";}

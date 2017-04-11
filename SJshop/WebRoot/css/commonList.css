@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+}
+/* 列表样式 */
+/* 标签 */
+.tags li{
+    width: 140px;
+    height: 38px;
+    line-height: 38px;
+    float: left;
+    position: relative;
+    text-align: center;
+    background:#d3d5d6;
+    margin-left: 6px;
+    font-size: 14px;
+    color: #fff;
+}
+.tagOn{
+    color: #959db1 !important;
+    background: #eef6fd !important;
+}
+.closeBtn{
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: url(../images/fImg/f_closeBtn.png) no-repeat;
+}
+/* 列表内容 */
+.panel{
+   /* background:#eef6fd;  */
+   background:#fff;
+    padding:0 15px;
+}
+/* 列表头部标题 */
+.titTxt{
+    height: 88px;
+    line-height: 88px;
+    color: #959db1;
+    font-family: "宋体";
+    font-size: 14px;
+}
+.color_red{
+    color:#ff7167;
+}
+/* 条件查询样式 */
+.condition{
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;
+    background:#f5f7f6;
+    border-bottom: 1px solid #dfdfdf;
+}
+.con_item input{
+    width: 110px;
+    height: 32px;
+    outline: none;
+    border:1px solid #dfdfdf;
+    padding-left: 5px;
+}
+.order_num input{
+    width: 150px;
+    padding-left: 3px;
+}
+.con_item select{
+    width: 100px;
+    height: 32px;
+    outline: none;
+    border:1px solid #dfdfdf;
+}
+.con_item label{
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+    color: #666666;
+    font-size: 14px;
+}
+.con_item button{
+   padding: 5px  20px;
+    border:0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 13px;
+    border-radius: 3px;
+}
+.con_item .reset{
+    background: #48cfad;
+}
+.con_item .search{
+    background: #ed5565;
+}
+/* 列表显示 */
+.listCon{
+    background: #fff;
+}
+.padLF15{
+    padding: 0 15px;
+}
+.padT15{
+    padding-top: 15px;
+}
+.padB15{
+    padding-bottom: 15px;
+}
+.listTab{
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+.th_style{
+    width: 100%;
+    /* height: 53px;
+    line-height: 53px; */
+    background: #eaf6f0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3f3e3e;
+}
+.td_style{
+    width: 100%;
+    /* height: 75px;
+    line-height: 75px; */
+    color: #5d5d5d;
+    font-size: 12px;
+}
+.td_style td{
+    padding: 20px 0px;
+    vertical-align: middle;
+}
+
+.th_style th {
+	padding: 20px 0px;
+	text-align: center;
+}
+
+.collection_btn{
+    /* display: block; */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #5185ff;
+    cursor: pointer;
+    line-height: 20px;
+    color: #fff !important;
+    font-size: 14px;
+    margin-right: 10px;
+    border:none;
+}
+
+.listTab tr:nth-child(odd){ background: #f4f8f6;}
+/* 分页 */
+.pagination{
+    /* width: 480px; */
+    margin: 0 auto;
+}
+.pagination_main{
+    width: 100%;
+    
+}
+
+
+
+
+.checkbox{
+    float: left;
+    height:30px;
+    line-height:30px;
+}
+ .checkbox span{
+    position: relative;
+}
+.checkbox input{
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    margin: 0;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    opacity: 0;
+}
+
+ .checkbox input:checked + .ui-checkbox{
+    color: #00a5e0;
+    background-color: #00a5e0;
+}
+.checkbox input:checked + .ui-checkbox + i{
+    opacity: 1;
+    color: #fff;
+}
+ .checkbox .ui-checkbox{
+    z-index: 1;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #a1c1ff;
+    border-radius: 6px;
+    /*box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;*/
+    background-color: #eaf7fc;
+    background-clip: content-box;
+    color: #d0d0d5;
+    vertical-align: -5px;
+    overflow: hidden;
+    transition: all 0.2s linear;
+}
+ .checkbox .ui-checkbox:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 20px 20px;
+    visibility: hidden;
+}
+.checkbox span>i{
+    position: absolute;
+    left: 2px;
+    top:-4px;
+    opacity: 0;
+    font-weight: bold;
+}

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot') format('embedded-opentype'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav > li > a >.fa-th-large:before {
+  content: "\e60f";
+}
+.nav > li.active > a >.fa-th-large:before {
+  content: "\e60c";
+}
+.nav > li > a >.fa-globe:before {
+  content: "\e613";
+}
+.nav > li.active > a >.fa-globe:before {
+  content: "\e614";
+}
+.nav > li > a >.fa-bar-chart-o:before {
+  content: "\e616";
+}
+.nav > li.active > a >.fa-bar-chart-o:before {
+  content: "\e615";
+}
+.nav > li > a >.fa-envelope:before {
+  content: "\e617";
+}
+.nav > li.active > a >.fa-envelope:before {
+  content: "\e612";
+}
+.nav > li > a >.fa-edit:before {
+  content: "\e60e";
+}
+.nav > li.active > a >.fa-edit:before {
+  content: "\e611";
+}
+.nav > li > a >.fa-desktop:before {
+  content: "\e60d";
+}
+.nav > li.active > a >.fa-desktop:before {
+  content: "\e610";
+}
+.fa-baobiao:before {
+	content: "\e618";
+}
+.fa-user1:before {
+	content: "\e6ff";
+}
+.fa-user2:before {
+	content: "\e6fa";
+}
+.fa-lock1:before {
+	content: "\e600";
+}
+.fa-lock2:before {
+	content: "\e795";
+}
+.fa-lingdang:before {
+	content: "\e643";
+}
+.fa-shouquan:before {
+	content: "\e6cb";
+}
+.fa-logo1:before {
+	content: "\e61a";
+}
+.fa-logo2:before {
+	content: "\e619";
+}

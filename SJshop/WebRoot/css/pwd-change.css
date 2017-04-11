@@ -1,0 +1,142 @@
+body,html{
+	height: 100%;
+	width: 100%;
+	font-family: "microsoft yahei","微软雅黑";
+	font-size: 16px;
+	color: #333;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	background: #f3f3f3;
+}
+
+header {
+	width: 100%;
+	background: #e4e4e4;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+header .head-wrapper {
+	height: 89px;
+	width: 804px;
+	margin: 0 auto;
+	line-height: 89px;
+}
+header .head-wrapper a {
+	color: #676767;
+	font-size: 32px;
+}
+header .head-wrapper a span,
+header .head-wrapper a i {
+	vertical-align: middle;
+}
+header .head-wrapper a span.fa {
+	font-size: 36px;
+}
+
+section {
+	position: absolute;
+	left: 0;
+	top: 90px;
+	right: 0;
+	bottom: 0;
+}
+section .main-content {
+	width: 804px;
+	height: 425px;
+	margin: 31px auto;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background: #fff;
+	-webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,.05);
+	-moz-box-shadow: 0 0 10px 5px rgba(0,0,0,.05);
+	box-shadow: 0 0 10px 5px rgba(0,0,0,.05);
+}
+section .main-content h2 {
+	font-size: 24px;
+	font-weight: normal;
+	text-align: center;
+	height: 93px;
+	border-bottom: 1px solid #dfdfdf;
+	line-height: 92px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+section .main-content form {
+	padding-top: 46px;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+section .main-content form .tips {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: red;
+}
+section .main-content form p {
+	margin-bottom: 19px;
+}
+section .main-content form p label {
+	text-align: right;
+	display: inline-block;
+	width: 277px;
+	padding-right: 25px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+::-webkit-input-placeholder{
+	color: #999;
+	font-family: "microsoft yahei";
+	font-size: 16px;
+}
+::-moz-placeholder{
+	color: #999;
+	font-family: "microsoft yahei";
+	font-size: 16px;
+}
+::-ms-input-placeholder{
+	color: #999;
+	font-family: "microsoft yahei";
+	font-size: 16px;
+}
+section .main-content form p input {
+	height: 42px;
+	width: 350px;
+	border: 1px solid #dfdfdf;
+	padding: 0 16px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: middle;
+	line-height: 40px;
+}
+section .main-content form .btn-wrapper {
+	padding-left: 281px;
+}
+section .main-content form .btn-wrapper input {
+	background: #ff3f3a;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff;
+	border: none;
+	font-weight: bold;
+	letter-spacing: 5px;
+	text-indent: 5px;
+}
+.focus {
+	-webkit-box-shadow: 0 2px 9px -1px #666 inset;
+	-moz-box-shadow: 0 2px 9px -1px #666 inset;
+	box-shadow: 0 2px 9px -1px #666 inset;
+}

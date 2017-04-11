@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yqjr.dao.UserRoleDao">
+	<resultMap type="com.yqjr.entity.UserRoleDO" id="userRoleList">
+		<result column="user_role_id" property="userRoleId" />
+		<result column="user_id" property="userId" />
+		<result column="role_id" property="roleId" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+	<resultMap type="java.util.HashMap" id="userRoleMap">
+		<result column="user_role_id" property="userRoleId" />
+		<result column="user_id" property="userId" />
+		<result column="role_id" property="roleId" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+	<select id="queryByUserId" parameterType="java.lang.Integer" resultMap="userRoleList">
+		SELECT user_role_id,user_id,role_id,creator,create_time FROM sys_user_role WHERE user_id=#{userId}
+	</select>
+	<select id="queryByRoleId" parameterType="java.lang.Integer" resultMap="userRoleList">
+		SELECT user_role_id,user_id,role_id,creator,create_time FROM sys_user_role WHERE user_role_id=#{userRoleId}
+	</select>
+	<select id="queryAllUserRole" resultMap="userRoleList">
+		SELECT user_role_id,user_id,role_id,creator,create_time FROM sys_user_role
+	</select>
+	<insert id="addUserRole" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="user_role_id">
+		INSERT INTO sys_user_role (
+			user_id,
+			role_id,
+			creator,
+			create_time
+		)
+		VALUES
+		<foreach collection="roleIds" item="item" separator=",">
+		(
+			#{userId},
+			#{item},
+			#{creator},
+			now()
+		)
+		</foreach>
+	</insert>
+	
+	<insert id="addDealerUserRole" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="user_role_id">
+		INSERT INTO dealer_user_role (
+			dealer_id,
+			user_id,
+			role_id,
+			creator,
+			create_time
+		)
+		VALUES
+		<foreach collection="roleIds" item="item" separator=",">
+		(
+			#{dealerId},
+			#{userId},
+			#{item},
+			#{creator},
+			now()
+		)
+		</foreach>
+	</insert>
+	
+	<delete id="delUserRole" parameterType="java.util.Map">
+		DELETE FROM sys_user_role WHERE user_id = #{userId};
+	</delete>
+	
+	<!-- 通过用户Id查询其所有的角色的审核级别 -->
+	<select id="queryAuditQuence" parameterType="int" resultType="int">
+		SELECT r.audit_sequence FROM sys_user_role s,sys_role_info r WHERE s.role_id = r.role_id AND s.user_id =  #{userId}
+	</select>
+</mapper>

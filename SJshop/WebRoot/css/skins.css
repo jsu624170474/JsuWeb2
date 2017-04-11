@@ -1,0 +1,199 @@
+#side-menu {
+    background: #4e4461;
+}
+
+.navbar-minimalize {
+    color: #fff;
+}
+
+.navbar-default {
+    background-color: #4e4461;
+    border-color: #2f4050;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+    background-color: #594978;
+    color: #fff;
+}
+
+.nav > li > a {
+    color: #fff;
+}
+
+.nav-second-level {
+    background: #4e4461;
+}
+
+.nav-third-level {
+    background: #4e4461;
+}
+
+.nav-forth-level {
+    background: #4e4461;
+}
+
+.mini-navbar ul#side-menu.nav > li.active {
+    background: #e53844;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > a:hover, .mini-navbar .sidebar-collapse > .nav > li > a:focus {
+    background: #e53844;
+}
+
+.mini-navbar .nav-second-level {
+    background-color: #4e4461;
+}
+
+body.mini-navbar .navbar-default .nav > li .nav-second-level li a {
+    color: #8d78cf;
+}
+
+body.mini-navbar .navbar-default .nav > li .nav-second-level li.active a {
+    background: #594978;
+    color: #fff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li > a {
+    color: #8d78cf;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li.active > a {
+    color: #fff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li .nav-forth-level > li > a {
+    color: #8d78cf;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li .nav-forth-level > li.active > a {
+    color: #fff;
+}
+
+.navbar-head a {
+    color: #fff;
+}
+
+.navbar-header {
+    background: #fff;
+    color: #666666;
+}
+
+.navbar-header .head-title {
+    color: #666666;
+}
+
+.navbar-header .login-state .fa {
+    color: #949bab;
+}
+
+.navbar-header .exit-btn {
+    background: #fff;
+}
+
+.navbar-header .exit-btn a {
+    color: #999;
+}
+
+.navbar-header .exit-btn a:hover {
+    background-color: #ff3b4a;
+    color: #fff;
+}
+
+/*表格样式按钮公共样式*/
+.ibox-content .operation-td span {
+	color: transparent;
+    border: 1px solid transparent;
+}
+.ibox-content .operation-td span .fa {
+    color: transparent;
+}
+
+.ibox-content .operation-td .revise-btn .fa{
+    color: #16d1ba;
+}
+.ibox-content .operation-td .revise-btn:hover {
+    border: 1px solid #16d1ba;
+    color: #16d1ba;
+}
+.ibox-content .operation-td .delete-btn {
+    border: 1px solid transparent;
+    color: transparent;
+}
+.ibox-content .operation-td .delete-btn .fa {
+    color: #ffa1a1;
+}
+.ibox-content .operation-td .delete-btn:hover {
+    border: 1px solid #ffa1a1;
+    color: #ffa1a1;
+}
+.ibox-content .operation-td .authorize {
+    color: transparent;
+    border:1px solid transparent;
+}
+.ibox-content .operation-td .authorize .fa {
+    color: #ffa1a1;
+    padding: 7px 0;
+}
+.ibox-content .operation-td .authorize:hover {
+    color: #ffa1a1;
+    border:1px solid #ffa1a1;
+}
+
+.ibox-content .operation-td .authorize-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .authorize-btn:hover {
+    border-color: #a0acf5;
+}
+
+.ibox-content .operation-td .reset-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .reset-btn:hover {
+    border-color: #a0acf5;
+}
+.ibox-content .operation-td .detail-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .detail-btn:hover {
+    border-color: #a0acf5;
+}
+.skin table tbody tr .operation-td span.authorize{
+    color: transparent;
+    border:1px solid transparent;
+}
+.skin table tbody tr .operation-td span.authorize:hover{
+    color: #ff4343;
+    border:1px solid #ff4343;
+}
+
+/*两套皮肤公共样式*/
+.skin-showNum {
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: -1px;
+    top: -3px;
+    background: #eb6755;
+    line-height: 13px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 10px;
+}
+.fa-lingdang .skin-showNum {
+	height: 6px;
+	width: 6px;
+	right: 2px;
+	top: 0;
+}
+.sidebar-collapse .nav li .skin-showNum {
+	display: none;
+}
+.mini-navbar .sidebar-collapse .nav li .skin-showNum {
+	display: block;
+}

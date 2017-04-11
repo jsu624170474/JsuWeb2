@@ -1,0 +1,241 @@
+
+*{
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    /*min-width: 1400px;*/
+    overflow: hidden;
+    height:60px;
+    line-height:60px;
+}
+header>.logo{
+    width: 164px;
+    padding:15px 0;
+    background: #6a7998;
+    text-align: center;
+    box-shadow: 1px 1px 3px 3px #5e6b85;
+}
+header>.loginInfo{
+    margin-left: 164px;
+    background: #6f7e9c;
+    color: #fff;
+    /*overflow: hidden;*/
+}
+header>.loginInfo>h1{
+    letter-spacing: 2px;
+}
+
+header>.loginInfo>a{
+    display: block;
+    /*position: relative;*/
+}
+header>.loginInfo>a>span{
+    position: absolute;
+    min-width: 18px;
+    height: 18px;
+    top: 10px;
+    right: 130px;
+    background: #f86e57;
+    text-align: center;
+    border-radius: 90%/100%;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 15px;
+}
+header .loginInfo .out{
+    padding: 0 20px 0 40px;
+    background: #606d89;
+}
+header .loginInfo .out:active{
+    background: #6f7e9c;
+}
+
+header .loginInfo .out i{
+    margin-right: 5px;
+    position: absolute;
+    top: 23px;
+    right:50px;
+}
+header .msgNotice>#msg_tip{
+    width: 400px;
+    /* background: #ccc; */
+    background: #fff;
+    position: absolute;
+    right: 43px;
+    top: 60px;
+    z-index: 1000;
+     display: none;
+}
+header .msgNotice:hover>#msg_tip{
+    display: block;
+}
+
+.main{
+    position: absolute;
+    top:60px;
+    left:0;
+    bottom:0;
+    right:0;
+    overflow-y:auto;
+}
+/*左边导航栏*/
+aside{
+    width:165px;
+    height:100%;
+    background: url(../images/asidebg.png) repeat-y;
+    border-right:1px solid #c7c7c7;
+    box-shadow: 2px 0 #d8d8d8;
+    overflow:hidden;
+    margin-left: -100%;
+}
+
+aside li{
+    width:100%;
+    transition: all 0.2s;
+    color: #5d5f60;
+}
+aside li .menutit{
+    height:70px;
+    line-height:70px;
+    padding-left:40px;
+    display: block;
+    position: relative;
+}
+
+aside li i{
+    width:30px;
+    height:30px;
+    margin-left:-15px;
+    color: #2f3747;
+}
+
+aside .menutit .roicon{
+    position: absolute;
+    right: 20px;
+    top: 33px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    display: inline-block;
+    border-top: 8px solid #868686;
+    border-left: 4px dashed transparent;
+    border-right: 4px dashed transparent;
+    border-bottom: 0 none;
+    transition:all 0.3s linear;
+}
+aside .menutit:hover{
+    color: #0345e2;
+}
+aside li .sndtit{
+    display: none;
+    margin-top: -10px;
+}
+aside .sndtit li{
+    margin-bottom: 5px;
+}
+aside .sndtit li a{
+    padding: 5px 0 5px 50px;
+    display:block;
+    font-size: 14px;
+    
+}
+
+aside .sndtit a:hover,aside .sndtit .color{
+    color:#0345e2;
+    border-left:4px solid #0345e2;
+}
+
+aside .has-submenu.on{
+    border-top: 2px solid #bfbfbf;
+    border-bottom:2px solid #bfbfbf;
+}
+
+/*内容区域*/
+.content{
+    width:100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+.contentWarp{
+    margin-left: 165px;
+}
+
+.contentWarp .hgroup{
+    height:80px;
+    background:#fff;
+    padding:0 0 0 60px;
+    overflow: hidden;
+}
+.contentWarp h1{
+    width: 120px;
+    height:87px;
+    padding-top: 45px;
+    color: #969696;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.contentWarp h1 i{
+    position: absolute;
+    top:15px;
+    left:50%;
+    font-size: 24px;
+    margin-left: -12px;
+}
+.contentWarp .bg{
+    background: #5185ff;
+    color: #fff;
+}
+
+.contentWarp .hgroup2{
+    /* width: 1100px;
+    margin: 0 auto; */
+    padding: 20px 0 0 0;
+    overflow: hidden;
+
+}
+.contentWarp .hgroup2 li{
+    padding: 0 30px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    color: #7a7a7a;
+    position: relative;
+    cursor: pointer;
+    background:#d3d5d6;
+    margin-right: 5px;
+    float: left;
+}
+.contentWarp .hgroup2 li i{
+    position: absolute;
+    top:0;
+    right:5px;
+    cursor: pointer;
+}
+.contentWarp .hgroup2 li.on{
+    background: #fff;
+}
+
+.conT>li{
+    background: #fff;
+    /* padding: 30px 45px; */
+    /* width:1100px; */
+    margin: 0 auto;
+    overflow: hidden;
+    display: none;
+}
+.conT>li.on{
+    display: block;
+}
+
+.contentWarp .hgroup2 li i:hover:before{
+    content: "\e646";
+    color: #fff;
+    background: #88aafb;
+}

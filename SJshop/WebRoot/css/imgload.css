@@ -1,0 +1,46 @@
+.bigfile {
+    height: 102px;
+    width: 212px;
+}
+.bigfile p {
+    color: #aaa;
+}
+.bigfile .fileBox {
+    bottom: 0;
+    height: 86px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.fileBoxCom {
+    border: 1px solid #dfdfdf;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+.fileBoxCom i {
+    color: #848484;
+    font-size: 60px;
+}
+.fileBoxCom input[type="file"] {
+    bottom: 0;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.fileBoxCom img {
+    height: auto;
+    margin-bottom: -5px;
+    width: 100%;
+}
+.moreImg img[src] {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}

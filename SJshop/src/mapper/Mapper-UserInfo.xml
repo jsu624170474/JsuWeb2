@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yqjr.dao.UserInfoDao">
+	<resultMap type="com.yqjr.entity.UserInfoDO" id="userInfoMap">
+		<result column="user_id" property="userId"/>
+		<result column="user_name" property="userName"/>
+		<result column="true_name" property="trueName"/>
+		<result column="password" property="password"/>
+		<result column="phone" property="phone"/>
+		<result column="email" property="email"/>
+		<result column="user_status" property="userStatus"/>
+		<result column="create_time" property="createTime"/>
+		<result column="update_time" property="updateTime"/>
+		<result column="login_time" property="loginTime"/>
+		<result column="salt" property="salt"/>
+	</resultMap>
+	<select id="getUsers" resultMap="userInfoMap" parameterType="java.lang.Integer">
+		SELECT user_id,user_name,true_name,salt,phone,email,create_time,update_time,login_time FROM sys_user_info
+		<where>
+			<if test="_parameter!=-1">
+				user_id = #{_parameter}
+			</if>
+		</where>
+	</select>
+	<select id="getUsersByMap" resultMap="userInfoMap" parameterType="java.util.Map">
+		SELECT user_id,user_name,true_name,salt,phone,email,create_time,update_time,login_time FROM sys_user_info
+		<where>
+			<if test="phone !=null">
+				and phone like concat('%', #{phone}, '%')
+			</if> 
+			<if test="trueName !=null">
+				and true_name like concat('%', #{trueName}, '%')
+			</if>
+		</where>
+	</select>
+	<select id="queryUserInfo" resultType="Integer" parameterType="java.util.Map">
+		SELECT count(user_id) FROM sys_user_info WHERE user_id=#{userId} and password = #{password}
+	</select>
+	<select id="queryUserByName" resultMap="userInfoMap" parameterType="java.lang.String">
+		SELECT * FROM sys_user_info WHERE user_name=#{userName}
+	</select>
+	<insert id="addUserInfo" useGeneratedKeys="true" keyProperty="userId"
+		parameterType="com.yqjr.entity.UserInfoDO">
+		INSERT INTO sys_user_info (
+		user_name,
+		true_name,
+		PASSWORD,
+		salt,
+		phone,
+		email,
+		user_status,
+		create_time,
+		update_time,
+		login_time
+		)
+		VALUES
+		(
+		#{userName},
+		#{trueName},
+		#{password},
+		#{salt},
+		#{phone},
+		#{email},
+		#{userStatus},
+		now(),
+		now(),
+		now()) 
+	</insert>
+	
+	<insert id="addDealerUserInfo" useGeneratedKeys="true" keyProperty="userId"
+		parameterType="com.yqjr.entity.UserInfoDO">
+		INSERT INTO dealer_user_info (
+		dealer_id,
+		user_name,
+		true_name,
+		PASSWORD,
+		salt,
+		phone,
+		email,
+		user_status,
+		create_time,
+		update_time,
+		login_time
+		)
+		VALUES
+		(
+		#{dealerId},
+		#{userName},
+		#{trueName},
+		#{password},
+		#{salt},
+		#{phone},
+		#{email},
+		#{userStatus},
+		now(),
+		now(),
+		now()) 
+	</insert>
+	
+	<insert id="addUserMenu" useGeneratedKeys="true" keyProperty="user_menu_id" parameterType="java.util.Map">
+			<if test="menuIds!=null">
+				INSERT INTO sys_user_menu(
+					user_id,
+					menu_id,
+					creator,
+					create_time
+				)
+				VALUES
+				<foreach collection="menuIds" separator=","  item="item">
+				(
+					#{userId},
+					#{item},
+					#{creator},
+					now()
+				)
+				</foreach>
+			</if>
+	</insert>
+	
+	<insert id="addDealerUserMenu" useGeneratedKeys="true" keyProperty="user_menu_id" parameterType="java.util.Map">
+			<if test="menuIds!=null">
+				INSERT INTO dealer_user_menu(
+					dealer_id,
+					user_id,
+					menu_id,
+					creator,
+					create_time
+				)
+				VALUES
+				<foreach collection="menuIds" separator=","  item="item">
+				(
+					#{dealerId},
+					#{userId},
+					#{item},
+					#{creator},
+					now()
+				)
+				</foreach>
+			</if>
+	</insert>
+	
+	<update id="updateUser" parameterType="java.util.Map">
+		UPDATE sys_user_info
+		<set>
+			<if test="password!=null">
+				password = #{password},
+			</if>
+			<if test="salt!=null">
+				salt = #{salt},
+			</if>
+			<if test="userName!=null">
+				user_name = #{userName},
+			</if>
+			<if test="trueName!=null">
+				true_name = #{trueName},
+			</if>
+			<if test="phone!=null">
+				phone = #{phone},
+			</if>
+			<if test="email!=null">
+				email = #{email},
+			</if>
+			<if test="loginTime!=null">
+				login_time = now(),
+			</if>
+			<if test="updateTime!=null">
+				update_time = now()
+			</if>
+		</set>
+		WHERE user_id =#{userId}
+	</update>
+	<delete id ="delUserMenu" parameterType="java.util.Map">
+		DELETE FROM sys_user_menu WHERE user_id = #{userId};
+	</delete>
+	<delete id="delUserInfo" parameterType="java.util.Map">
+		DELETE FROM sys_user_info WHERE user_id = #{userId};
+	</delete>
+	<select id="getUsersByRoleName" resultMap="userInfoMap" >
+		SELECT
+			user_id,
+			user_name,
+			true_name,
+			salt,
+			phone,
+			email,
+			create_time,
+			update_time,
+			login_time
+		FROM
+			sys_user_info
+		WHERE
+			user_id IN (
+				SELECT
+					user_id
+				FROM
+					sys_user_role
+				WHERE
+					role_id IN (
+						SELECT
+							role_id
+						FROM
+							sys_role_info
+						WHERE
+							role_name IN 
+							<foreach collection="array" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+					)
+			)
+	</select>
+	
+	<!-- 通过真实姓名查询用户信息 -->
+	<select id="queryByTrueName" parameterType="String" resultMap="userInfoMap">
+		select  * from sys_user_info where true_name like concat('%',#{value},'%')
+	</select>
+</mapper>

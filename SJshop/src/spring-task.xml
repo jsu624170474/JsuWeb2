@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/task
+                        http://www.springframework.org/schema/task/spring-task-3.2.xsd"
+       default-autowire="byName">
+			
+	<!-- TASK定时任务XML配置 -->
+    <bean id="batchWithhold" class="com.yqjr.task.BatchWithhold"></bean>
+    <task:scheduled-tasks>
+        <!-- 对失败的数据重新发送 -->
+        <task:scheduled ref="batchWithhold" method="sendNotifyResult"        cron="0 0 0/30 * * ?"/>
+    </task:scheduled-tasks>			
+</beans>

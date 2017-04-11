@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqjr.dao.SysFieldDao">
+	<resultMap type="com.yqjr.entity.SysFieldInfoDO" id="authorResult">
+		<result column="busi_id" property="busiId" />
+		<result column="field_name" property="fieldName" />
+		<result column="cn_name" property="cnName" />
+		<result column="field_value" property="fieldValue" />
+		<result column="field_desc" property="fieldDesc" />
+		<result column="field_order" property="fieldOrder" />
+		<result column="remark" property="remark" />
+	</resultMap>
+
+	<select id="queryFiled" parameterType="java.util.Map"
+		resultMap="authorResult">
+		SELECT busi_id,field_name,cn_name,field_value,field_desc,field_order,remark
+		FROM `sys_field_info`
+		<where>
+			busi_id=#{busiId} AND field_name=#{fieldName}
+		</where>
+		order by field_order asc
+	</select>
+	
+	<select id="getSysField" parameterType="java.util.Map" resultMap="authorResult">
+		SELECT busi_id,field_name,cn_name,field_value,field_desc,field_order,remark
+		FROM `sys_field_info`
+		<where>
+			and busi_id='CronBatchWithholdFlag'
+			<if test="fieldName != null and fieldName != ''">
+			and field_name = #{fieldName,jdbcType=VARCHAR}
+			</if>
+			<if test="fieldValue != null and fieldValue != ''">
+			and field_value = #{fieldValue,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select> 	
+	
+	<select id="selectTransfer" resultMap="authorResult">
+		SELECT busi_id,field_name,cn_name,field_value,field_desc,field_order,remark
+		FROM `sys_field_info` WHERE busi_id != 'CronBatchWithholdFlag'
+	</select>
+	
+	<update id="switchSysField" parameterType="com.yqjr.entity.SysFieldInfoDO">
+		UPDATE `sys_field_info` SET field_value = #{fieldValue} WHERE field_name = #{fieldName} AND busi_id = #{busiId}
+	</update>
+</mapper>

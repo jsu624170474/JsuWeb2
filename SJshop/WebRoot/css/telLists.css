@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "microsoft yahei",Verdana,Arial,sans-serif,"Times New Roman",'宋体',simsun;
+}
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -ms-appearance:none;
+}
+select::-ms-expand {
+    display: none;
+}
+.input{
+    font-size: 14px;
+    padding: 8px 6px;
+    border: solid 1px #ddd;
+    width: 100%;
+    height: 38px;
+    line-height: 20px;
+    display: block;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
+    transition: all 1s cubic-bezier(0.175,0.885,0.32,1) 0s;
+}
+.input:focus {
+    border-color: #09c;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1) 0s;
+}
+input:focus, textarea:focus, button:focus, select:focus {
+    outline: none;
+}
+
+@-webkit-keyframes a-swing {
+    20% {
+        -webkit-transform: rotate(15deg)
+    }
+    40% {
+        -webkit-transform: rotate(-10deg)
+    }
+    60% {
+        -webkit-transform: rotate(5deg)
+    }
+    80% {
+        -webkit-transform: rotate(-5deg)
+    }
+    100% {
+        -webkit-transform: rotate(0deg)
+    }
+}
+
+@-moz-keyframes a-swing {
+    20% {
+        -moz-transform: rotate(15deg)
+    }
+    40% {
+        -moz-transform: rotate(-10deg)
+    }
+    60% {
+        -moz-transform: rotate(5deg)
+    }
+    80% {
+        -moz-transform: rotate(-5deg)
+    }
+    100% {
+        -moz-transform: rotate(0deg)
+    }
+}
+
+@-ms-keyframes a-swing {
+    20% {
+        -ms-transform: rotate(15deg)
+    }
+    40% {
+        -ms-transform: rotate(-10deg)
+    }
+    60% {
+        -ms-transform: rotate(5deg)
+    }
+    80% {
+        -ms-transform: rotate(-5deg)
+    }
+    100% {
+        -ms-transform: rotate(0deg)
+    }
+}
+
+@keyframes a-swing {
+    20% {
+        transform: rotate(15deg)
+    }
+    40% {
+        transform: rotate(-10deg)
+    }
+    60% {
+        transform: rotate(5deg)
+    }
+    80% {
+        transform: rotate(-5deg)
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+}
+.button{
+    background: transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin: 0;
+    display: inline-block;
+    line-height: 20px;
+    transition: all 1s cubic-bezier(0.175,0.885,0.32,1) 0s;
+    cursor: pointer;
+}
+.btn-orange{
+    border: solid 1px #f60;
+    color: #f60;
+}
+.btn-orange:hover{
+    color: #fff;
+    border-color: #f90;
+    background-color: #f90;
+}
+.btn-blue{
+    border: solid 1px #00a9f1;
+    color: #00a9f1;
+    padding: 6px;
+    margin-right: 10px;
+}
+.btn-blue:hover{
+    color: #fff;
+    border-color: #00a9f1;
+    background-color: #00a9f1;
+}
+.swing, .swing-hover:hover {
+    -webkit-animation-name: a-swing;
+    -moz-animation-name: a-swing;
+    -ms-animation-name: a-swing;
+    animation-name: a-swing;
+}
+
+.swing-hover{
+    -webkit-animation: 1s ease;
+    -moz-animation: 1s ease;
+    -ms-animation: 1s ease;
+    animation: 1s ease;
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('http://libs.baidu.com/fontawesome/4.1.0/fonts/fontawesome-webfont.eot?v=4.1.0');
+    src: url('http://libs.baidu.com/fontawesome/4.1.0/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('http://libs.baidu.com/fontawesome/4.1.0/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('http://libs.baidu.com/fontawesome/4.1.0/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('http://libs.baidu.com/fontawesome/4.1.0/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+[class*='icon-']:before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: baseline;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-sort-down:before, .icon-sort-desc:before {
+    content: "\f0dd";
+}
+.icon-calendar:before {
+    content: "\f073";
+}
+.telForm {
+    font-size: 14px;
+}
+.inputInfo{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.inputInfo input, .inputInfo select {
+    float: left;
+    width: 170px;
+    margin-right: 10px;
+    color: #333;
+    border-color: #c5c6c6;
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder, option:first-child {
+    color: #c5c6c6;
+}
+
+.inputInfo label {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.inputInfo i {
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+}
+
+.resLabel i {
+    top:4px;
+    display: none\9;
+}
+
+.calLabel i {
+    top: 6px;
+    color: #0d89c8;
+}
+
+.telTable{
+   border: 1px solid #dfdfdf;
+    background: #fff;
+    color: #666;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.error{
+    color:#c20000;
+}
+.telTable tr{
+    height: 54px;
+    line-height: 54px;
+}
+.telTable tr:not(:last-child),.telTable thead tr{
+    border-bottom: 1px solid #dfdfdf;
+}
+.telTable thead tr,.telTable tbody tr:nth-of-type(even){
+    background: #f5f8fd;
+}
+.telTable thead tr{
+    color:#333;
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yqjr.dao.RoleInfoDao">
+	<resultMap type="java.util.HashMap" id="roleMap">
+		<result column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+		<result column="audit_sequence" property="auditSequence" />
+		<result column="role_disc" property="roleDisc" />
+	</resultMap>
+	<resultMap type="com.yqjr.entity.RoleInfoDO" id="authorResult">
+		<result column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+		<result column="audit_sequence" property="auditSequence" />
+		<result column="role_disc" property="roleDisc" />
+	</resultMap>
+	<select id="getRoleInfoList" resultMap="roleMap"  parameterType="java.util.Map">
+		SELECT a.role_id,a.role_name,a.creator,a.create_time,a.audit_sequence,a.role_disc FROM sys_role_info AS a 
+		<if test="userId != null">
+			left join sys_user_role AS b
+			ON a.role_id = b.role_id
+			WHERE b.user_id  = #{userId} 
+		</if>
+		<where>
+			<if test="roleName!=null">
+				AND a.role_name = #{roleName}
+			</if>
+		</where>
+	</select>
+	<!-- 获取所有审核角色 根据排序号排序 -->
+	<select id="queryAllRoleInfoSort" resultMap="authorResult"  parameterType="java.util.Map">
+		SELECT a.role_id,a.role_name,a.creator,a.create_time,a.audit_sequence,a.role_disc FROM sys_role_info AS a 
+		<where>
+			<if test="roleName!=null">
+				AND a.role_name = #{roleName}
+			</if>
+		</where>
+	</select>
+	
+	<select id="getRoleInfo" resultMap="authorResult"  parameterType="java.lang.Integer">
+		SELECT role_id,role_name,creator,create_time,role_disc FROM sys_role_info
+		WHERE role_id = #{_parameter}
+	</select>
+		<select id="getRoleInfoBySequence" resultMap="authorResult"  parameterType="java.lang.String">
+		SELECT role_id,role_name,creator,create_time,audit_sequence,role_disc FROM sys_role_info
+		WHERE audit_sequence =  #{sequence}
+	</select>
+	
+	<insert id="addRoleInfo" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.yqjr.entity.RoleInfoDO">
+		INSERT INTO sys_role_info(
+			role_name,
+			creator,
+			create_time,
+			audit_sequence,
+			role_disc
+		)VALUES(
+			#{roleName},
+			#{creator},
+			now(),
+			#{auditSequence},
+			#{roleDisc}
+		);
+	</insert>
+	
+	<insert id="addDealerRoleInfo" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.yqjr.entity.RoleInfoDO">
+		INSERT INTO dealer_role_info(
+			dealer_id,
+			role_name,
+			creator,
+			create_time,
+			audit_sequence,
+			role_disc
+		)VALUES(
+			#{dealerId},
+			#{roleName},
+			#{creator},
+			now(),
+			#{auditSequence},
+			#{roleDisc}
+		);
+	</insert>
+	
+	<update id="updateRoleInfo" parameterType="com.yqjr.entity.RoleInfoDO">
+		UPDATE sys_role_info
+		<set>
+			<if test="roleName != null">
+				role_name = #{roleName },
+			</if>
+			<if test="roleDisc != null">
+				role_disc = #{roleDisc }
+			</if>
+		</set>
+		<where>
+			<if test="roleId!=null">
+				role_id = #{roleId}
+			</if>
+		</where>
+	</update>
+	<insert id="addRolePerm" useGeneratedKeys="true" keyColumn="role_perm_id" parameterType="java.util.Map">
+		INSERT INTO sys_role_perm(
+			role_id,
+			perm_id,
+			creator,
+			create_time
+		)VALUES
+		<if test="permIds!=null">
+			<foreach collection="permIds" separator="," item="item">
+				(#{roleId},#{item},#{creator},now())
+			</foreach>
+		</if>
+	</insert>
+	<delete id="delRolePerm" parameterType="java.lang.Integer">
+		DELETE from sys_role_perm where role_id = #{_parameter}; 
+		/*ALTER TABLE sys_role_perm AUTO_INCREMENT 1;*/
+	</delete>
+	
+</mapper>

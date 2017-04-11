@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqjr.dao.GlobalConfigsDao">
+	<resultMap type="com.yqjr.entity.GlobalConfigsDO" id="globleConfigsMap">
+		<result column="gc_id" property="gcId" />
+		<result column="gc_key" property="gcKey" />
+		<result column="gc_value" property="gcValue" />
+		<result column="gc_rmk" property="gcRmk" />
+	</resultMap>
+	
+	<select id="getAllGlobleConfigs" resultMap="globleConfigsMap">
+		select 
+			g.gc_id,
+			g.gc_key,
+			g.gc_value,
+			g.gc_rmk 
+		from 
+			globle_configs g
+	</select>
+	
+	<select id="getAllGlobleConfigsById" resultMap="globleConfigsMap" parameterType="java.lang.Integer">
+		select 
+			g.gc_id,
+			g.gc_key,
+			g.gc_value,
+			g.gc_rmk 
+		from 
+			globle_configs g
+		where
+			g.gc_id=#{gcId}
+	</select>
+	
+	<update id="upGlobleConfigsById" parameterType="com.yqjr.entity.GlobalConfigsDO">
+		update 
+			globle_configs g 
+		set 
+			g.gc_value=#{gcValue},
+			g.gc_rmk=#{gcRmk} 
+		where 
+			g.gc_id =#{gcId}
+	</update>
+	
+	<select id="getGlobleConfigsList" resultMap="globleConfigsMap" parameterType="com.yqjr.entity.GlobalConfigsDO">
+		select 
+			g.gc_id,
+			g.gc_key,
+			g.gc_value,
+			g.gc_rmk 
+		from 
+			globle_configs g
+		<where>
+			<if test="gcKey != null and gcKey != ''">
+				and g.gc_key = #{gcKey}
+			</if>
+			<if test="gcValue != null and gcValue != ''">
+				and g.gc_value = #{gcValue}
+			</if>
+		</where>
+	</select>
+	
+	
+	
+	
+	
+</mapper>

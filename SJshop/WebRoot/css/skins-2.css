@@ -1,0 +1,538 @@
+/*表格样式按钮样式*/
+
+.ibox-content .operation-td span {
+    color: transparent;
+    border: 1px solid transparent;
+}
+
+.ibox-content .operation-td span .fa {
+    color: transparent;
+}
+
+.ibox-content .operation-td .revise-btn .fa {
+    color: #16d1ba;
+}
+
+.ibox-content .operation-td .revise-btn:hover {
+    border: 1px solid #16d1ba;
+    color: #16d1ba;
+}
+
+.ibox-content .operation-td .delete-btn {
+    border: 1px solid transparent;
+    color: transparent;
+}
+
+.ibox-content .operation-td .delete-btn .fa {
+    color: #ffa1a1;
+}
+
+.ibox-content .operation-td .delete-btn:hover {
+    border: 1px solid #ffa1a1;
+    color: #ffa1a1;
+}
+
+.ibox-content .operation-td .authorize {
+    color: transparent;
+    border: 1px solid transparent;
+}
+
+.ibox-content .operation-td .authorize .fa {
+    color: #ffa1a1;
+    padding: 7px 0;
+}
+
+.ibox-content .operation-td .authorize:hover {
+    color: #ffa1a1;
+    border: 1px solid #ffa1a1;
+}
+
+.skin2-note {
+    border-radius: 8px;
+    background: #ff796f;
+}
+
+.ibox-content .operation-td .authorize-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+
+.ibox-content .operation-td .authorize-btn:hover {
+    border-color: #a0acf5;
+}
+
+.ibox-content .operation-td .reset-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+
+.ibox-content .operation-td .reset-btn:hover {
+    border-color: #a0acf5;
+}
+
+.ibox-content .operation-td .detail-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+
+.ibox-content .operation-td .detail-btn:hover {
+    border-color: #a0acf5;
+}
+
+table tbody tr:nth-of-type(odd) {
+    background: #fff8f6 !important;
+}
+
+table tbody tr .operation-td span.authorize {
+    color: transparent;
+    border: 1px solid transparent;
+}
+
+table tbody tr .operation-td span.authorize:hover {
+    color: #ff4343;
+    border: 1px solid #ff4343;
+}
+
+/*头部样式修改*/
+#page-wrapper .welcome-message {
+    text-indent: 20px;
+}
+
+.breadcrumb > .fa {
+    color: #599ebc;
+    font-size: 14px;
+}
+
+.breadcrumb > li a {
+    color: #599ebc;
+}
+
+.navbar-head {
+    background: #38373e;
+    position: relative;
+}
+
+.navbar-head a {
+    padding: 0;
+}
+
+.navbar-head i {
+    width: 54px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px !important;
+    background: #f5462e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 28px !important;
+    color: #ffffff;
+}
+
+.mini-navbar .navbar-head i {
+    font-size: 30px !important;
+}
+
+.navbar-head .hfq-baobiaoxt {
+    display: block;
+    height: 50px !important;
+    line-height: 50px;
+    margin-left: 70px;
+    color: #ffffff;
+    font-size: 36px !important;
+}
+
+.mini-navbar .navbar-head .hfq-baobiaoxt {
+    display: none;
+}
+
+p.login-state {
+    color: #ffffff;
+}
+
+.login-state i {
+    color: #ffffff !important;
+}
+
+.navbar-header .exit-btn {
+    background: #38373e;
+    border-left: 1px solid #35343b;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+}
+
+.navbar-header .exit-btn a {
+    color: #999;
+}
+
+.navbar-header .exit-btn a:hover {
+    background-color: #ff3b4a;
+    color: #fff;
+}
+
+.navbar-head {
+    height: 50px;
+}
+
+.navbar-header {
+    background: #38373e;
+    height: 50px;
+}
+
+.float-right p {
+    padding: 15px !important;
+}
+
+.sidebar-collapse {
+    top: 50px;
+}
+
+#side-menu {
+    background: #ffffff;
+}
+
+.basic-bg {
+    background: #f0edf6;
+}
+
+.navbar-default {
+    background-color: #ffffff;
+    width: 200px;
+}
+
+@media (min-width: 768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 200px !important;
+    }
+}
+
+.mini-navbar #page-wrapper {
+    margin: 0 0 0 50px !important;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+    background-color: #fff3f1 !important;
+    /*color: #666666;*/
+}
+
+.navbar-default .nav > li > a:focus i {
+    background-color: #ffbcaf;
+}
+
+.nav > li > a {
+    color: #666666;
+}
+
+.nav > li > a > span {
+    line-height: 48px;
+    margin-right: 10px;
+}
+
+.nav-second-level {
+    background: #ffffff;
+}
+
+.nav-third-level {
+    background: #ffffff;
+}
+
+.nav-forth-level {
+    background: #ffffff;
+}
+
+.nav .nav-second-level li a {
+    padding: 15px 0px 15px 65px !important;
+    border-bottom: 1px solid #dfdfdf;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*.nav .nav-second-level li .nav-third-level li a {*/
+    /*padding: 10px 0px 10px 25px !important;*/
+/*}*/
+/*.nav .nav-second-level li .nav-third-level li .nav-forth-level li a {*/
+    /*padding: 10px 0px 10px 30px !important;*/
+/*}*/
+
+.mini-navbar .nav-second-level {
+    background-color: #ffffff;
+}
+
+body.mini-navbar .navbar-default .nav > li .nav-second-level li a {
+    color: #333333;
+}
+
+body.mini-navbar .navbar-default .nav > li .nav-second-level li .nav-third-level li a,
+body.mini-navbar .navbar-default .nav > li .nav-second-level li .nav-third-level li .nav-forth-level li a {
+    color: #999999 !important;
+}
+
+body.mini-navbar .navbar-default .nav > li .nav-second-level li .nav-third-level li a:hover,
+body.mini-navbar .navbar-default .nav > li .nav-second-level li .nav-third-level li .nav-forth-level li a:hover {
+    color: #ffbcaf !important;
+}
+
+.mini-navbar .nav .nav-second-level {
+    border: 1px solid #dfdfdf;
+}
+
+.mini-navbar .nav .nav-second-level li a {
+    padding: 13px 5px 13px 20px !important;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    color: #333333 !important;
+}
+
+.mini-navbar li.active .nav-second-level {
+    left: 56px !important;
+}
+
+.nav li a i {
+    margin-right: 6px;
+    border: 1px solid #dfdfdf;
+    border-bottom: none !important;
+    border-top: none;
+    width: 54px;
+    height: 49px;
+    text-align: center;
+    line-height: 46px;
+}
+
+.nav li {
+    margin: 0 !important;;
+}
+
+.nav > li > a > b {
+    line-height: 1;
+    background-color: #ff796f;
+    margin-top: 2px !important;
+}
+
+.mini-navbar .sidebar-collapse .nav li {
+    position: relative;
+}
+
+.mini-navbar .sidebar-collapse li.active {
+    background: #ffbcaf !important;
+}
+
+.mini-navbar .sidebar-collapse .nav li a {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.mini-navbar .sidebar-collapse .nav li i {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #dfdfdf;
+}
+
+.mini-navbar .sidebar-collapse .nav li:nth-of-type(6) {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.mini-navbar .navbar-head i {
+    width: 56px;
+}
+
+body.mini-navbar .navbar-static-side {
+    width: 56px !important;
+}
+
+/*.mini-navbar .sidebar-collapse .nav .mini-height {*/
+/*width: 56px;*/
+/*height: 60px;*/
+/*}*/
+
+.mini-navbar .nav-second-level {
+    left: 56px;
+}
+
+.navbar-default .nav > li .nav-second-level li a {
+    color: #666666;
+}
+
+.navbar-default .nav > li .nav-second-level li.active a,
+.navbar-default .nav > li .nav-second-level li:hover a {
+    background: #fff3f1;
+    color: #ffbcaf;
+}
+
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li > a {
+    color: #666666;
+}
+
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li.active > a,
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li:hover > a {
+    background: #fff3f1;
+    color: #ffbcaf;
+}
+
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li .nav-forth-level > li > a {
+    color: #666666;
+}
+
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li .nav-forth-level > li.active > a,
+.sidebar-collapse > .nav > li .nav-second-level > li .nav-third-level > li .nav-forth-level > li:hover > a {
+    background: #fff3f1;
+    color: #ffbcaf;
+}
+
+.nav li .nav-second-level li span,
+.nav li .nav-second-level li .nav-third-level span,
+.nav li .nav-second-level li .nav-third-level li .nav-forth-level li span {
+    line-height: 19px;
+}
+
+.nav li .nav-second-level li a .skin2-note {
+    margin-right: 12px;
+}
+
+.mini-navbar .nav li .nav-second-level li a .skin2-note {
+    margin-right: 0;
+}
+
+.nav li a {
+    padding: 0 !important;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.mini-navbar .sidebar-collapse .nav li .skin-showNum {
+    display: block;
+    right: 12px;
+    top: 14px;
+}
+
+.white-bg {
+    background: #f0edf6;
+}
+
+.nav li a i:hover, .nav li a i:focus {
+    background: #ffbcaf;
+    color: #ffffff;
+}
+
+.nav li a:active i {
+    background: #ffbcaf;
+}
+
+.nav > li > a .fa {
+    color: #666666 !important;
+}
+
+.nav > li.active > a .fa {
+    color: #fff !important;
+}
+
+.nav > li > a:hover .fa {
+    color: #fff !important;
+    background: #ffbcaf;
+    border-top: 1px solid #ffbcaf;
+}
+
+.nav > li > a:focus .fa {
+    color: #fff !important;
+}
+
+.nav > li.active > a > .fa {
+    color: #ffffff;
+    background: #ffbcaf;
+}
+
+.nav > li > a > .fa.arrow,
+.nav > li.active > a > .fa.arrow {
+    color: #666666 !important;
+    background: transparent !important;
+}
+
+.mini-navbar .nav > li.active > a:focus > .fa,
+.mini-navbar .nav > li.active > a:hover > .fa {
+    color: #ffffff;
+    background: #ffbcaf;
+}
+
+.mini-navbar .nav > li > a:focus > .fa,
+.mini-navbar .nav > li > a:hover > .fa {
+    color: #ffffff;
+    background: #ffbcaf;
+}
+
+table tbody tr:nth-of-type(1) {
+    background: #e6f2f8 !important;
+}
+
+.head-title i {
+    color: #fff;
+    background: #ff685d;
+    display: block;
+    font-weight: normal;
+    height: 24px;
+    width: 28px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.skin-showNum {
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: -1px;
+    top: -3px;
+    background: #eb6755;
+    line-height: 12px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.sidebar-collapse .nav li .skin-showNum {
+    display: none;
+}
+
+.arrow {
+    color: #666666;
+}
+
+/*不同系统字体样式*/
+.navbar-head .hfq-fengkongxt {
+    display: block;
+    height: 50px !important;
+    line-height: 50px;
+    margin-left: 70px;
+    color: #ffffff;
+    font-size: 36px !important;
+}
+
+.mini-navbar .navbar-head .hfq-fengkongxt {
+    display: none;
+}
+
+.navbar-head .hfq-zhanghuxt {
+    display: block;
+    height: 50px !important;
+    line-height: 50px;
+    margin-left: 70px;
+    color: #ffffff;
+    font-size: 36px !important;
+}
+
+.mini-navbar .navbar-head .hfq-zhanghuxt {
+    display: none;
+}
+
+

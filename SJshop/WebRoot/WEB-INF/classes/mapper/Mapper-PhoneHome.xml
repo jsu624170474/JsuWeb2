@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yqjr.dao.PhoneHomeDao" >
+  <resultMap id="BaseResultMap" type="com.yqjr.entity.CfgGoodsDO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="goods_type_id" property="goodsTypeId" jdbcType="INTEGER" />
+    <result column="flag" property="flag" jdbcType="CHAR" />
+    <result column="period_amt" property="periodAmt" jdbcType="DOUBLE" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="is_Recommend" property="isRecommend" jdbcType="CHAR" />
+    <result column="sales_amt" property="salesAmt" jdbcType="DOUBLE" />
+    <result column="sales_date_begin" property="salesDateBegin" jdbcType="VARCHAR" />
+    <result column="sales_date_end" property="salesDateEnd" jdbcType="VARCHAR" />
+    <result column="sales_limit_num" property="salesLimitNum" jdbcType="VARCHAR" />
+    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="order_seq" property="orderSeq" jdbcType="VARCHAR" />
+    <result column="update_Time" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, goods_type_id, flag, period_amt, stock, is_Recommend, sales_amt, sales_date_begin, sales_date_end, 
+    sales_limit_num, pic_url, remark, order_seq, update_Time, update_User
+  </sql>
+  <!-- 促销 -->
+  <select id="selectSales" resultType="java.util.Map">
+	  select 
+	  <include refid="Base_Column_List" />
+	  from cfg_goods cg
+	  where IFNULL(sales_amt,0)>0 and IFNULL(sales_amt,0)!= period_amt and flag='10'
+	  order by order_seq desc,update_Time desc 
+  </select>
+  
+  <!-- 推荐 -->
+  <select id="selectRecommend" resultType="java.util.Map">
+	  select 
+	  <include refid="Base_Column_List" />
+	  from cfg_goods cg
+	  where IFNULL(is_Recommend,'N')='Y' and flag='10'
+	  order by order_seq desc,update_Time desc 
+  </select>
+  
+  <!-- 热销 -->
+  <select id="selectHot" resultType="java.util.Map">
+	  select 
+	  <include refid="Base_Column_List" />
+	  from cfg_goods cg
+	  where 
+	  	flag='10' and 
+	  	(IFNULL(is_Recommend,'N')='N' or IFNULL(sales_amt,0)=0)
+	  order by order_seq desc,update_Time desc 
+  </select>
+</mapper>

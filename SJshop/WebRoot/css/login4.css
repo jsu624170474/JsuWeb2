@@ -1,0 +1,122 @@
+html,body {
+	height: 100%;
+	width: 100%;
+}
+ .lg4-body {
+ 	height: 100%;
+	width: 100%;
+ 	min-width: 800px;
+	min-height: 600px; 
+	background: url(../img/login/login4.jpg) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.lg4-main {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	width: 309px;
+	height: 404px;
+	padding: 0 20px;
+	background: rgba(0, 29, 54, .9);
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+.lg4-main .hfq-baobiao {
+	width: 66px;
+	height: 66px;
+	border-radius: 50%;
+	border: 1px solid #95a1ab;
+	font-size: 28px;
+	color: #fff;
+	line-height: 66px;
+	text-align: center;
+	margin: 33px auto 0;
+	display: block;
+}
+.lg4-main .hfq-baobiaoxt11 {
+	font-size: 30px;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+	display: block;
+}
+.lg4-form li:first-child {
+	margin-top: 10px;
+}
+.lg4-form li:last-child {
+	margin-top: 20px;
+}
+.lg4-form .lg4-input {
+	width: 100%;
+	height: 40px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px; 
+	border: none;
+	padding-left: 14px;
+	font-size: 14px;
+	box-shadow: inset 0px 2px 6px #c0c3c6;
+	-moz-box-shadow: inset 0px 2px 6px #c0c3c6;
+	-webkit-box-shadow: inset 0px 2px 6px #c0c3c6;
+}
+::-webkit-input-placeholder{
+	color: #666666;
+	font-family: "microsoft yahei","黑体", Verdana, Arial, sans-serif, "Times New Roman", "宋体", simsun;
+}
+::-moz-placeholder{
+	color: #666666;
+	font-family: "microsoft yahei","黑体", Verdana, Arial, sans-serif, "Times New Roman", "宋体", simsun;
+}
+::-ms-input-placeholder{
+	color: #666666;
+	font-family: "microsoft yahei","黑体", Verdana, Arial, sans-serif, "Times New Roman", "宋体", simsun;
+}
+.lg4-form .lg4-remember {
+	text-align: right;
+}
+.lg4-form .checkbox {
+	height: 14px;
+	width: 14px;
+	background: #fdfdfd;
+	vertical-align: middle;
+	margin: 0;
+	border: none;
+	display: inline-block;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: inset 0px 1px 3px #c0c3c6;
+	-moz-box-shadow: inset 0px 1px 3px #c0c3c6;
+	-webkit-box-shadow: inset 0px 1px 3px #c0c3c6;
+}
+.lg4-form span {
+	line-height: 54px;
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+	padding-left: 6px;
+}
+.lg4-btn {
+	height: 40px;
+	line-height: 38px;
+	width: 100%;
+	background: #ff3f3a;
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	font-family: "microsoft yahei","黑体", Verdana, Arial, sans-serif, "Times New Roman", "宋体", simsun;
+}
+.focus {
+	-webkit-box-shadow: 0 2px 9px -1px #666 inset;
+	-moz-box-shadow: 0 2px 9px -1px #666 inset;
+	box-shadow: 0 2px 9px -1px #666 inset;
+}

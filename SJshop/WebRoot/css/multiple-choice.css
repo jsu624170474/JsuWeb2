@@ -1,0 +1,90 @@
+.z-target {
+    width: 300px;
+    height: auto;
+    min-height: 30px;
+    border: 1px solid #cccccc;
+    position: relative;
+    box-sizing: border-box;
+
+    padding: 3px 25px 0 3px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #555;
+    background: url("../images/z-arrow2.png") 275px center no-repeat;
+}
+.z-target.z-changeImage{
+    background: url("../images/z-arrow1.png") 275px center no-repeat;
+}
+
+
+.z-box li{
+    border:1px solid #dfdfdf;
+    margin:0 3px 3px 0;
+    outline: 0;
+    border-radius: 4px;
+}
+
+.z-box input{
+    border:none;
+    outline: none;
+    text-indent: 10px;
+}
+
+.z-content {
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    z-index: 1000;
+    font-size: 14px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.z-target li:hover {
+    background: #dfdfdf;
+}
+
+.z-content li:nth-of-type(1) {
+    background: #428bca;
+    color: #ffffff;
+    outline: none;
+}
+
+.z-target .z-clickBtn {
+    height: 100%;
+    width: 300px;
+    min-height:30px;
+}
+
+.z-target li {
+    display: inline-block;
+}
+
+.z-content li {
+    display: block;
+}
+
+.option {
+    cursor: pointer;
+    padding: 2px 5px;
+}
+.z-target span{
+    display: inline-block;
+    color: #ccc;
+    transform: translateY(-3px);
+}
+.z-target span:hover{
+    color: #9f9f9f;
+}
+.z-target .z-content span{
+    display: none;
+}
