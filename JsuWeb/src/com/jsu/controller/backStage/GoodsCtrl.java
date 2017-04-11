@@ -190,7 +190,7 @@ public class GoodsCtrl {
 		model.addAttribute("goodsName", goodsName);
 		model.addAttribute("goodsTypeName", goodsTypeName);
 		model.addAttribute("list", list);
-		return "goods/recycleList";
+		return "backStage/goods/recycleList";
 	}
 	
 	

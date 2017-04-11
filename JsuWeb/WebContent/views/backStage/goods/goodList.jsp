@@ -3,6 +3,11 @@
 <html lang="en">
   <head>
     <%@include file="/views/backStage/commons/commonHeader.jsp"%>
+    <style type="text/css">
+    	img {
+    		cursor:pointer;
+    	} 
+    </style>
   </head>
   <body>
 	<%@include file="/views/backStage/commons/commonBegin.jsp"%>
@@ -28,7 +33,7 @@
                              </div>
                          </form>
 
-                      	<form name="userform" action="<%=path %>/backStage/goods/list" method="get">
+                      	<form id="userform" name="userform" action="<%=path %>/backStage/goods/list" method="get">
                           <table class="table table-striped border-top" id="sample_1">
                           <thead>
                           <tr style="background-color: #ecd59e;">
@@ -49,7 +54,7 @@
                           	<!--表格头部结束-->
 							<c:forEach items="${list }" var="li" varStatus="s">
 	                          <tr class="odd gradeX">
-	                          	  	<td>${li.id} - ${list.size()}</td>
+	                          	  	<td>${li.id}</td>
 				                    <td>${li.name}</td>
 				                    <td>${li.goodsTypeName}</td>
 				                    <td>${li.period_amt}</td>
@@ -74,7 +79,8 @@
 									 <td>${li.sales_date_begin}</td>
 									 <td>${li.sales_date_end}</td>
 	                              <td>
-	                              	<button class="btn btn-primary btn-xs" type="button" onclick="edit('${goods.id}','${goods.name }','${goods.remark }')"><i class="icon-pencil"></i></button>
+	                              	<button class="btn btn-primary btn-xs" type="button" onclick="edit('${li.id}')"><i class="icon-pencil"></i></button>
+	                              	<button class="btn btn-danger btn-xs" type="button" onclick="delGoods(${li.id})"><i class="icon-trash"></i></button>
 	                              </td>
 	                          </tr>
 	                        </c:forEach>
@@ -179,7 +185,7 @@
 				btn: ['移到回收站','取消'], //按钮
 			}, function(){
 				if(updateFlag(id,'90')){
-		    		$("#queryform").submit();
+		    		$("#userform").submit();
 		    	}
 			}, function(){
 			});
