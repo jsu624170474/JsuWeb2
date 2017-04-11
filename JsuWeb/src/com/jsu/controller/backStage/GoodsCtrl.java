@@ -98,7 +98,7 @@ public class GoodsCtrl {
 		
 		model.addAttribute("cfgGoods", cfgGoodsDo);
 		model.addAttribute("cfgGoodsTypeList", cfgGoodsTypeList);
-		return "goods/detail";
+		return "backStage/goods/goodInfo";
 	}
 	
 	@RequestMapping("detailFrame")
