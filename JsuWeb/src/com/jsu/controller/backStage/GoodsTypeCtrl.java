@@ -48,13 +48,18 @@ public class GoodsTypeCtrl {
 	@ResponseBody
 	public String save(HttpServletRequest request){
 		
+		String id = StringUtil.nullToString(request.getParameter("id"));
 		String name = StringUtil.nullToString(request.getParameter("name"));
 		String remark = StringUtil.nullToString(request.getParameter("remark"));
 		
 		CfgGoodsTypeDO cfgGoodsTypeDO = new CfgGoodsTypeDO();
 		cfgGoodsTypeDO.setName(name);
 		cfgGoodsTypeDO.setRemark(remark);
+		if(!StringUtil.isBlank(id)){
+			cfgGoodsTypeDO.setId(Integer.parseInt(id));
+		}
 		cfgGoodsTypeService.save(cfgGoodsTypeDO);
+		
 		
 		return Constants.STATUS_SUCC;
 	}

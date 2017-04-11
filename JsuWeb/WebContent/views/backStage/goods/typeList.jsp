@@ -3,7 +3,6 @@
 <html lang="en">
   <head>
     <%@include file="/views/backStage/commons/commonHeader.jsp"%>
-    <link href="<%=request.getContextPath()%>/static/backStage/css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
 	<%@include file="/views/backStage/commons/commonBegin.jsp"%>
@@ -46,7 +45,9 @@
 	                          	  <td>${goods.id }</td>
 	                              <td>${goods.name }</td>
 	                              <td>${goods.remark }</td>
-	                              <td></td>
+	                              <td>
+	                              	<button class="btn btn-primary btn-xs" type="button" onclick="edit('${goods.id}','${goods.name }','${goods.remark }')"><i class="icon-pencil"></i></button>
+	                              </td>
 	                          </tr>
 	                        </c:forEach>
                           </tbody>
@@ -61,52 +62,75 @@
                   </div>
               </div>
               <!-- page end-->
-              
-              
-              <!-- 模态框（Modal） -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				    <div class="modal-dialog">
-				        <div class="modal-content">
-				            <div class="modal-header">
-				                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				                <h4 class="modal-title" id="myModalLabel">新增产品类型</h4>
-				            </div>
-				            <div class="modal-body" style="overflow:hidden;">
-				            	<div class="form-group" >
-                                      <label class="col-lg-2 control-label">名称</label>
-                                      <div class="col-lg-10">
-                                          <input id="name" name="name" type="text" class="form-control" style="width: 200px;">
-                                      </div>
-                                  </div>
-                                  <br/>
-                                  <div class="form-group" >
-                                      <label class="col-lg-2 control-label">说明</label>
-                                      <div class="col-lg-10">
-                                          <input id="remark" name="remark" type="text" class="form-control" style="width: 200px;">
-                                      </div>
-                                  </div>
-				            </div>
-				            <div class="modal-footer">
-				                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				                <button type="button" class="btn btn-primary" id="saveGoodsType">保存产品类型</button>
-				            </div>
-				        </div>
-				    </div>
-				</div>
           </section>
       </section>
       <!--main content end-->
+      
+      <!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+		style="width: 620px;height: 380px;margin: auto;overflow: hidden;">
+	    <div class="modal-dialog" style="border: 0px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel" style="color: white;">新增产品类型</h4>
+	            </div>
+	            <div class="modal-body" style="overflow:hidden;">
+	            	<input id="id" type="hidden" />
+	            	<div class="form-group" style="padding: 13px;">
+                        <label class="col-lg-2 control-label">名称 :</label>
+                        <div class="col-lg-10">
+                            <input id="name" name="name" type="text" class="form-control" style="width: 200px;">
+                        </div>
+                    </div>
+                    <div class="form-group"  style="padding: 13px;">
+                        <label class="col-lg-2 control-label">说明 :</label>
+                        <div class="col-lg-10">
+                        	<textarea id="remark" name="remark" rows="3" cols="300" style="width: 300px;" class="form-control"></textarea>
+                          <!-- <input id="remark" name="remark" type="text" class="form-control" style="width: 200px;"> -->
+                        </div>
+                    </div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary" id="saveGoodsType">保存产品类型</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	
 	<%@include file="/views/backStage/commons/commonEnd.jsp"%>
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/DT_bootstrap.js"></script>
+	<script type="text/javascript" src="<%=path %>/static/backStage/js/layer/layer.js"></script>
+	
 	<script type="text/javascript">
 		$("#saveGoodsType").click( function () {
+			saveGoodsType();
+		});
+		
+		function edit(id,name,remark){
+			$("#id").val(id);
+			$("#name").val(name);
+			$("#remark").val(remark);
+
+			$("#myModal").modal();
+		}
+		
+		function saveGoodsType(){
+			var name = $("#name").val();
+			var remark = $("#remark").val();
+			
+			if(name==null || name ==''){
+				layer.msg('[名称]为空！');
+				return ;
+			}
+			
 			$.ajax({
 	            type:"post",
 	            data:{
-	            	"name" : $("#name").val(),
-	            	"remark" : $("#remark").val()
+	            	"id" : $("#id").val(),
+	            	"name" : name,
+	            	"remark" : remark
 	            },
 	            async: false,
 	            url:"<%=path %>/backStage/goods/type/save",
@@ -119,7 +143,7 @@
 	                alert("异常，请联系管理员！");
 	            }
 	        });
-		});
+		}
 	</script>
 	
 	</body>
