@@ -31,7 +31,7 @@ import com.jsu.service.goods.CfgGoodsPicService;
 import com.jsu.service.goods.CfgGoodsService;
 
 @Controller
-@RequestMapping("/goods")
+@RequestMapping("backStage/goods")
 public class GoodsCtrl {
 
 	@Autowired
@@ -66,7 +66,7 @@ public class GoodsCtrl {
 		model.addAttribute("goodsName", goodsName);
 		model.addAttribute("goodsTypeName", goodsTypeName);
 		model.addAttribute("list", list);
-		return "goods/list";
+		return "backStage/goods/goodList";
 	}
 	
 	@RequestMapping("detail")

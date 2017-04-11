@@ -255,11 +255,14 @@
                           <span>${menu.menuName }</span>
                           <span class="arrow"></span>
                       </a>
-                      <c:forEach items="${menu.subMenuList}" var="menuSecond" >
-                      	  <ul class="sub ${(curUserMenuSel2==menuSecond.menuId) ? 'active' : '' }">
-	                          <li><a class="" href="<%=request.getContextPath()%>${menuSecond.linkUrl}">${menuSecond.menuName }</a></li>
-	                      </ul>
-                      </c:forEach>
+                      
+                      <c:if test="${not empty menu.subMenuList}">
+                      <ul class="sub">
+                      	  <c:forEach items="${menu.subMenuList}" var="menuSecond" varStatus="status" >
+	                          <li class="${(curUserMenuSel2==menuSecond.menuId) ? 'active' : '' }"><a href="<%=request.getContextPath()%>${menuSecond.linkUrl}">${menuSecond.menuName }</a></li>
+	                      </c:forEach>
+	                  </ul>
+	                  </c:if>
                   </li>
                 </c:forEach>
               </ul>
