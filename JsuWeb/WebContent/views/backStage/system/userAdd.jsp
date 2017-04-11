@@ -14,7 +14,7 @@
               <div class="row">
                   <div class="col-lg-12">
                   
-                  <div id="alertDiv" class="alert alert-warning">
+                  <div id="alertDiv" class="alert alert-warning" style="display: none;">
 						<a href="#" class="close" onclick="closeAlert()">
 							&times;
 						</a>
