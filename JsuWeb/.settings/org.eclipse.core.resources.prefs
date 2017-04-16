@@ -2,4 +2,5 @@ eclipse.preferences.version=1
 encoding//WebContent/static/frontEnd/js/owl.carousel.js=GBK
 encoding//WebContent/views/frontEnd/commons/commons.jsp=UTF-8
 encoding//WebContent/views/frontEnd/home.jsp=UTF-8
+encoding//src/configuration.properties=UTF-8
 encoding/<project>=UTF-8
