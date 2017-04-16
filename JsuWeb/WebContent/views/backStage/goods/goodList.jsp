@@ -28,7 +28,7 @@
                         	 </div>
                         	 <div class="form-group" style="float: right;margin: 10px;margin-right: 50px;">
                                  <div class="col-lg-offset-2 col-lg-10">
-                                     <button id="btnGoodAdd" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">新增商品</button>
+                                     <button id="btnGoodAdd" type="button" class="btn btn-danger" >新增商品</button>
                                  </div>
                              </div>
                          </form>
@@ -100,83 +100,17 @@
       </section>
       <!--main content end-->
       
-      <!-- 模态框（Modal） -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
-		style="width: 620px;height: 380px;margin: auto;overflow: hidden;">
-	    <div class="modal-dialog" style="border: 0px;">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	                <h4 class="modal-title" id="myModalLabel" style="color: white;">新增产品类型</h4>
-	            </div>
-	            <div class="modal-body" style="overflow:hidden;">
-	            	<input id="id" type="hidden" />
-	            	<div class="form-group" style="padding: 13px;">
-                        <label class="col-lg-2 control-label">名称 :</label>
-                        <div class="col-lg-10">
-                            <input id="name" name="name" type="text" class="form-control" style="width: 200px;">
-                        </div>
-                    </div>
-                    <div class="form-group"  style="padding: 13px;">
-                        <label class="col-lg-2 control-label">说明 :</label>
-                        <div class="col-lg-10">
-                        	<textarea id="remark" name="remark" rows="3" cols="300" style="width: 300px;" class="form-control"></textarea>
-                          <!-- <input id="remark" name="remark" type="text" class="form-control" style="width: 200px;"> -->
-                        </div>
-                    </div>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-	                <button type="button" class="btn btn-primary" id="saveGoodsType">保存产品类型</button>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	
 	<%@include file="/views/backStage/commons/commonEnd.jsp"%>
 	<script type="text/javascript" src="<%=path %>/static/backStage/assets/data-tables/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="<%=path %>/static/backStage/js/layer/layer.js"></script>
 	
 	<script type="text/javascript">
-		$("#saveGoodsType").click( function () {
-			saveGoodsType();
+		$("#btnGoodAdd").click( function () {
+			window.location.href='<%=basePath%>backStage/goods/detail';
 		});
 		
-		function edit(id,name,remark){
-			$("#id").val(id);
-			$("#name").val(name);
-			$("#remark").val(remark);
-
-			$("#myModal").modal();
-		}
-		
-		function saveGoodsType(){
-			var name = $("#name").val();
-			var remark = $("#remark").val();
-			
-			if(name==null || name ==''){
-				layer.msg('[名称]为空！');
-				return ;
-			}
-			
-			$.ajax({
-	            type:"post",
-	            data:{
-	            	"id" : $("#id").val(),
-	            	"name" : name,
-	            	"remark" : remark
-	            },
-	            async: false,
-	            url:"<%=path %>/backStage/goods/type/save",
-	            success:function(data) {
-	                	if(data.rtnCode!='S'){
-	                		window.location.href='<%=path %>/backStage/goods/type/list';
-	                	}
-	            },
-	            error:function(){
-	                alert("异常，请联系管理员！");
-	            }
-	        });
+		function edit(id){
+			window.location.href='<%=basePath%>backStage/goods/detail?id='+id;
 		}
 		
 		function delGoods(id){
