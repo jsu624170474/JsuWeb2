@@ -60,7 +60,7 @@
                                   <div class="form-group">
                                       <label class="col-lg-2 control-label">库存</label>
                                       <div class="col-lg-2">
-                                          <input name="stock" type="email" class="form-control" value="${cfgGoods.stock}" required="required" 
+                                          <input name="stock" type="text" class="form-control" value="${cfgGoods.stock}" required="required" 
 											onkeyup="this.value=this.value.replace(/\D/g,'')">
                                       </div>
                                   </div>
@@ -100,16 +100,16 @@
                                   <div class="form-group">
                                       <label class="col-lg-2 control-label">促销时间段</label>
                                       <div class="col-lg-4">
-                                          <div class="input-append date" id="dpYears" data-date="2017-04-01"
+                                          <div class="input-append date" id="beginDateDiv" data-date="2017-04-01"
                                                data-date-format="yyyy-mm-dd" >
                                               <input class="form-control" size="16" type="text" value="2017-04-01" readonly>
-                                              <span class="add-on" ><i class="icon-calendar"></i></span>
+                                              <span class="add-on" ><i id="beginDate" class="icon-calendar"></i></span>
                                           </div>
                                           <span> 至 </span>
-                                          <div class="input-append date" id="dpYears1" data-date="12-02-2012"
-                                               data-date-format="dd-mm-yyyy" >
-                                              <input class="form-control" size="16" type="text" value="12-02-2012" readonly>
-                                              <span class="add-on" ><i class="icon-calendar"></i></span>
+                                          <div class="input-append date" id="endDateDiv" data-date="2017-04-10"
+                                               data-date-format="yyyy-mm-dd" >
+                                              <input class="form-control" size="16" type="text" value="2017-04-10" readonly>
+                                              <span class="add-on" ><i id="endDate" class="icon-calendar"></i></span>
                                           </div>
                                       </div>
                                   </div>
@@ -160,6 +160,10 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
+			
+			$("#beginDateDiv").datepicker();
+			$("#endDateDiv").datepicker();
+			
 	    	$("#btnBack").click( function () {
 	    		window.location.href='<%=basePath%>backStage/sys/user/list';
 	    	});
